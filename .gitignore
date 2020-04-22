@@ -1,0 +1,6 @@
+# Directories
+app/build/**
+node_modules
+
+# Files
+.env

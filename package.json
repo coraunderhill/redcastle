@@ -29,7 +29,6 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "dotenv-webpack": "^1.7.0",
-    "googleapis": "^48.0.0",
     "html-webpack-plugin": "^4.2.0",
     "rimraf": "^3.0.2",
     "webpack": "^4.42.1",

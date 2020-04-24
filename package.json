@@ -13,8 +13,7 @@
   "scripts": {
     "build": "webpack --config webpack/config.dev.js",
     "clean": "rimraf app/build/**",
-    "serve": "electron ./app/build/electron.js",
-    "start": "run-p build serve"
+    "serve": "electron ./app/build/electron.js"
   },
   "dependencies": {
     "electron": "^8.2.2",

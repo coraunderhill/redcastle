@@ -6,13 +6,13 @@ const core = require('./config.core.js');
 
 // Electron configuration
 module.exports = {
-	name: 'electron',
-	context: core.context,
-	entry: './src/electron.js',
-	output: {
-		filename: 'electron.js',
-		path: core.output.path,
-	},
-	resolve: core.resolve,
-	target: 'electron-main',
+  name: 'electron',
+  context: core.context,
+  entry: './src/electron.js',
+  output: {
+    filename: 'electron.js',
+    path: core.output.path,
+  },
+  resolve: core.resolve,
+  target: 'electron-main',
 };

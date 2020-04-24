@@ -1,2 +1,6 @@
 // Load resources
-const renderer = require('Common/renderer');
+const { client } = require('./common/client');
+const renderer = require('./common/renderer');
+
+// Load the Google API client
+gapi.load('client', client);

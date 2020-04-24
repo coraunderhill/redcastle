@@ -3,7 +3,7 @@
 
 ## What is Redcastle?
 Redcastle is a WIP, POC for a standalone, cross-platform desktop YouTube player
-that was sleek, efficient, intuitive, and most importantly convenient.
+that is sleek, efficient, intuitive, and most importantly convenient.
 Currently, development is in its infancy.
 <br><br>
 

@@ -1,11 +1,11 @@
 // Import modules
-import React, { Component } from 'react';
+import React from 'react';
 
 // Main application component
-export default class App extends Component {
+const App = () => {
 
-  render() {
-    return (<h1>Redcastle v0.0.1</h1>);
-  }
+  return (<h1>Redcastle v0.0.1</h1>);
 
 }
+
+export default App;

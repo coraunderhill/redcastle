@@ -8,6 +8,6 @@ module.exports = {
     path: path.resolve(__dirname, '../app/build'),
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.json'],
   },
 };

@@ -12,25 +12,27 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack/config.dev.js",
-    "clean": "rimraf app/build/**",
-    "serve": "electron ./app/build/electron.js"
+    "start": "electron ./app/build/electron.js",
   },
   "dependencies": {
-    "electron": "^8.2.2",
+    "electron": "^8.2.5",
+    "express": "^4.17.1",
+    "googleapis": "^49.0.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@types/webpack": "^4.41.12",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "dotenv-webpack": "^1.7.0",
-    "html-webpack-plugin": "^4.2.0",
-    "rimraf": "^3.0.2",
-    "webpack": "^4.42.1",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"

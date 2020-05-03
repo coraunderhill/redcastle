@@ -1,7 +1,24 @@
-// Import modules
+// Import Node modules
 import React from 'react';
 import { render } from 'react-dom';
 
-// Import main app component and render
-import App from '../components/App/App';
-render(<App />, document.getElementById('root'));
+// Import React components
+import Header from '../components/Header/Header';
+import List from '../components/List/List';
+
+export const updateView = data => {
+  const dataType = data.kind;
+  let view;
+
+  switch (dataType) {
+    case 'youtube#videoListResponse':
+    view = <List data={data} />
+  }
+
+  const ui = <div>
+    <Header />
+    {view}
+  </div>;
+
+  render(ui, document.getElementById('root'));
+}

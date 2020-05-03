@@ -1,4 +1,4 @@
-// Import plugins
+// Import Webpack plugins
 const DotEnvPlugin = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -8,21 +8,10 @@ const core = require('./config.core.js');
 // Base configuration
 module.exports = {
   context: core.context,
-  entry: './src',
-  externals: {
-    gapi: 'gapi',
-  },
+  entry: core.entry,
   module: {
     rules: [
-      { // JavaScript and JSX
-        test: /\.jsx?/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          plugins: ['@babel/plugin-transform-runtime'],
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
-      },
+      core.module.rules.js,
     ],
   },
   output: core.output,

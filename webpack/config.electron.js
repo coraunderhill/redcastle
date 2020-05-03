@@ -9,6 +9,9 @@ module.exports = {
   name: 'electron',
   context: core.context,
   entry: './src/electron.js',
+  node: {
+    __dirname: true,
+  },
   output: {
     filename: 'electron.js',
     path: core.output.path,

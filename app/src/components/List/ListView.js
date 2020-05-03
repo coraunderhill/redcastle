@@ -6,14 +6,21 @@ import React from 'react';
 const ListView = (props) => {
 
   const {
-    title,
+    items,
   } = props;
+
+  let listItems = [];
+  for (let [key, val] of Object.entries(items)) {
+    listItems.push(
+      <div className="video-list-item" key={val.id}>
+        <span className="video-list-item-id">{val.id}</span>
+      </div>
+    );
+  }
 
   return (
     <div className="video-list">
-      <div className="video-list-item">
-        <span className="video-list-item-title">{title}</span>
-      </div>
+      {listItems}
     </div>
   );
 

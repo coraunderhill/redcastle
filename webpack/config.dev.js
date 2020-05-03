@@ -1,10 +1,11 @@
-// Import modules
+// Import Webpack plugins
 const merge = require('webpack-merge');
 
 // Import additional configurations
 const base = require('./config.base.js');
-const core = require('./config.core.js');
+const clean = require('./config.clean.js');
 const electron = require('./config.electron.js');
+const core = require('./config.core.js');
 
 // Common developer configuration values
 const common = {
@@ -13,16 +14,19 @@ const common = {
 };
 
 // Electron configuration
-const app = merge(common, electron);
+const client = merge(common, clean, electron,);
 
-// App core configuration
-const main = merge(base, common, {
+// App configuration
+const app = merge(base, common, {
   name: 'main',
   output: {
     filename: 'res/main.js',
   },
   plugins: core.plugins,
-  target: 'web',
+  node: {
+    global: true,
+  },
+  target: 'electron-renderer',
 });
 
-module.exports = [app, main];
+module.exports = [client, app];

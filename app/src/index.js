@@ -1,6 +1,10 @@
-// Load resources
-const { client } = require('./common/client');
-const renderer = require('./common/renderer');
+// Import YouTube Data API client
+const client = require('./common/client');
 
-// Load the Google API client
-gapi.load('client', client);
+const params = {
+  chart: 'mostPopular',
+  part: 'id',
+  regionCode: 'US',
+};
+
+client.list(params);

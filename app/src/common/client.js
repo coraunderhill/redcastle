@@ -1,26 +1,17 @@
-// Set base URL
-const url = 'https://www.googleapis.com/youtube/v3/videos';
+// Import Node modules
+import { google } from 'googleapis';
 
-// Google API library client
-export const client = () => {
+// Import React renderer
+import { updateView } from './renderer';
 
-  // Initialize the client library
-  console.log('Initializing Google API client');
+// Initialize YouTube Data API
+const youtube = google.youtube({
+  auth: process.env.TESTING_KEY,
+  version: 'v3',
+});
 
-  gapi.client.init({
-    'apiKey': process.env.TESTING_KEY,
-  }).then(() => {
-    // Make an API request
-    return gapi.client.request({
-      'path': url,
-      'params': {
-        'part': 'id,contentDetails',
-        'chart': 'mostPopular',
-        'regionCode': 'US',
-      },
-    });
-  }).then(
-    response => { console.log(response.result) },
-    reason => { console.log(`Error during API call: ${reason.result.error.message}`) }
-  );
-}
+export const list = async params => {
+  const res = await youtube.videos.list(params);
+  const { data } = res;
+  updateView(data);
+};

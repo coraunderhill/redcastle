@@ -1,6 +1,5 @@
-// Import modules
+// Import Node modules
 const { BrowserWindow, app } = require('electron');
-const path = require('path');
 
 // Instantiate the window to prevent eaten into memory
 let window;
@@ -14,5 +13,5 @@ app.on('ready', () => {
     },
     width: 800,
   });
-  window.loadFile(path.join('index.html'));
+  window.loadFile('./index.html');
 });

@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack/config.dev.js",
-    "start": "electron ./app/build/electron.js",
+    "start": "electron ./app/build/electron.js"
   },
   "dependencies": {
     "electron": "^8.2.5",

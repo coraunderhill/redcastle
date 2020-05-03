@@ -1,5 +1,5 @@
 // Import Node modules
-const { BrowserWindow, app } = require('electron');
+import { BrowserWindow, app } from 'electron';
 
 // Instantiate the window to prevent eaten into memory
 let window;

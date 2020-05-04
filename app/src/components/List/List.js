@@ -6,6 +6,8 @@ import ListView from './ListView';
 
 /**
  * Video list
+ * @param {Object} props React properties
+ * @param {Object} props.data API response data
  */
 const List = props => {
 

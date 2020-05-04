@@ -10,6 +10,10 @@ const youtube = google.youtube({
   version: 'v3',
 });
 
+/**
+ * Query the API for a list of videos
+ * @param {Object} params API request parameters
+ */
 export const list = async params => {
   const res = await youtube.videos.list(params);
   const { data } = res;

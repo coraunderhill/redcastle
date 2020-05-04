@@ -2,13 +2,16 @@ import React from 'react';
 
 /**
  * Video list view
+ * @param {Object} props React properties
+ * @param {Object} props.items API response items
  */
-const ListView = (props) => {
+const ListView = props => {
 
   const {
     items,
   } = props;
 
+  // Iterate over items in object and map to new list
   let listItems = [];
   for (let [key, val] of Object.entries(items)) {
     listItems.push(

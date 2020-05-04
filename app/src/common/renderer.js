@@ -6,10 +6,15 @@ import { render } from 'react-dom';
 import Header from '../components/Header/Header';
 import List from '../components/List/List';
 
+/**
+ * Update React view
+ * @param {Object} data Data object to pass to React renderer
+ */
 export const updateView = data => {
   const dataType = data.kind;
   let view;
 
+  // Match view to response type
   switch (dataType) {
     case 'youtube#videoListResponse':
     view = <List data={data} />

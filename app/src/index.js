@@ -4,7 +4,7 @@ const client = require('./common/client');
 // Set API request parameters
 const params = {
   chart: 'mostPopular',
-  part: 'id',
+  part: 'id,snippet',
   regionCode: 'US',
 };
 

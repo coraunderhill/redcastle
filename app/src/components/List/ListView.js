@@ -1,3 +1,4 @@
+// Import Node modules
 import React from 'react';
 
 /**
@@ -14,9 +15,12 @@ const ListView = props => {
   // Iterate over items in object and map to new list
   let listItems = [];
   for (let [key, val] of Object.entries(items)) {
+    const desc = val.snippet.description;
+    const id = val.id;
+    const title = val.snippet.title;
     listItems.push(
-      <div className="video-list-item" key={val.id}>
-        <span className="video-list-item-id">{val.id}</span>
+      <div className="video-list-item" key={id}>
+        <span className="video-list-item-title">{title}</span>
       </div>
     );
   }

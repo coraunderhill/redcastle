@@ -1,39 +1,30 @@
 // Import Node modules
+import { platform } from 'os';
 import React from 'react';
 import { render } from 'react-dom';
 
+// Import CSS frameworks
+import photon from '../static/css/_photon';
+
 // Import React components
-import Header from '../components/Header/Header';
-import List from '../components/List/List';
-import Nav from '../components/Nav/Nav';
+import Darwin from '../components/Templates/Darwin';
 
 /**
  * Update React view
- * @param {Object} data Data object to pass to React renderer
+ * @param {Object} view React component to load with template
  */
-export const updateView = data => {
-  const dataType = data.kind;
-  let view;
+const updateView = (view) => {
+  let App;
+  let cssFramework;
 
-  // Match view to response type
-  switch (dataType) {
-    case 'youtube#videoListResponse':
-    view = <List data={data} />
+  // Set resources depending on host OS
+  if (platform == 'darwin') {
+    App = Darwin(view);
+    cssFramework = photon;
   }
 
-  const ui = <div className="window">
-    <Header />
-    <div className="window-content">
-      <div className="pane-group">
-        <div className="pane-sm sidebar">
-          <Nav />
-        </div>
-        <div className="pane">
-          {view}
-        </div>
-      </div>
-    </div>
-  </div>;
-
-  render(ui, document.getElementById('root'));
+  // Render app
+  render(App, document.getElementById('root'));
 }
+
+export default updateView;

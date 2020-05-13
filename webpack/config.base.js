@@ -8,13 +8,40 @@ const core = require('./config.core.js');
 // Base configuration
 module.exports = {
   context: core.context,
-  entry: core.entry,
+  entry: {
+    main: core.entry,
+    scss: './src/static/scss/main.scss',
+  },
   module: {
     rules: [
       core.module.rules.js,
+      { // Fonts
+        test: /\.(eot|svg|ttf|woff)/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'res/fonts'
+        },
+      },
+      { // Sass and CSS
+        test: /\.(c|sc)ss/,
+        loader: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
-  output: core.output,
+  output: {
+    filename: 'res/[name].js',
+    path: core.output.path,
+  },
   plugins: [
     new DotEnvPlugin(),
     new HtmlWebpackPlugin({

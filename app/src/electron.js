@@ -8,6 +8,7 @@ let window;
 app.on('ready', () => {
   window = new BrowserWindow({
     height: 600,
+    titleBarStyle: 'hidden',
     webPreferences: {
       nodeIntegration: true,
     },

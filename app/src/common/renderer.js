@@ -20,7 +20,7 @@ export const updateView = data => {
     view = <List data={data} />
   }
 
-  const ui = <div>
+  const ui = <div id="app">
     <Header />
     {view}
   </div>;

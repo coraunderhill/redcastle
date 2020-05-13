@@ -12,7 +12,32 @@ import ListView from './ListView';
 const List = props => {
 
   const { data } = props;
-  return (<ListView items={data.items} />);
+
+  // Iterate over items in object and map to new list
+  let listItems = [];
+  for (let [key, val] of Object.entries(data.items)) {
+    const { id } = val;
+    const {
+      channelTitle,
+      publishedAt,
+      thumbnails,
+      title,
+    } = val.snippet;
+
+    const date = new Date(publishedAt).toDateString();
+    const time = new Date(publishedAt).toLocaleTimeString();
+
+    listItems.push({
+      id: id,
+      channel: channelTitle,
+      date: date,
+      thumb: thumbnails,
+      time: time,
+      title: title,
+    });
+  }
+
+  return (<ListView items={listItems} />);
 
 }
 

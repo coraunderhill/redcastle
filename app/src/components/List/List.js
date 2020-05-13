@@ -6,14 +6,15 @@ import ListView from './ListView';
 
 /**
  * Video list
- * @param {Object} props React properties
+ * @param {Object} props Component properties
  * @param {Object} props.data API response data
+ * @returns {Object} React component
  */
 const List = props => {
 
   const { data } = props;
 
-  // Iterate over items in object and map to new list
+  // Iterate over object and map to new list
   let listItems = [];
   for (let [key, val] of Object.entries(data.items)) {
     const { id } = val;

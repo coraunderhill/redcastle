@@ -10,6 +10,9 @@ const youtube = google.youtube({
 /**
  * Query the API for a list of videos
  * @param {Object} params API request parameters
+ * @param {string} params.part Comma-separated list of resource properties
+ * @param {string} params.filter Set the data type to be requested (`chart`, `id`, or `myRating`)
+ * @returns {Promise} Asyncronous API call
  */
 const list = async params => (
   await youtube.videos.list(params)

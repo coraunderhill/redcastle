@@ -1,6 +1,11 @@
 // Import modules
 import React from 'react';
 
+/**
+ * Navigation view
+ * @param {Object} props Component properties
+ * @returns {Object} React component
+ */
 const NavView = props => {
 
   const { items } = props;

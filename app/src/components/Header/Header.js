@@ -2,7 +2,8 @@
 import React from 'react';
 
 /**
- * Main app component
+ * App header
+ * @returns {Object} React component
  */
 const Header = () => (
   <div className="toolbar toolbar-header">

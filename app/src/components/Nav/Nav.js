@@ -4,6 +4,10 @@ import React from 'react';
 // Import Nav view
 import NavView from './NavView';
 
+/**
+ * Navigation component
+ * @returns {Object} React component
+ */
 const Nav = () => {
 
   const items = [

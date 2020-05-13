@@ -7,7 +7,8 @@ import './video-list';
 /**
  * Video list view
  * @param {Object} props Component properties
- * @param {Object} props.items API response items
+ * @param {Array} props.items List items to be displayed
+ * @returns {Object} React component
  */
 const ListView = props => {
 
@@ -16,6 +17,7 @@ const ListView = props => {
     items,
   } = props;
 
+  // Iterate over array and map to new list
   const listItems = items.map(item => (
     <div className="video-list-item" key={item.id}>
       <a><span className="video-list-item-thumb"><img src={item.thumb.default.url} /></span></a>

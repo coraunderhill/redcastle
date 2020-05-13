@@ -1,5 +1,19 @@
+// Import Node modules
+import { platform } from 'os';
+
 // Import YouTube Data API client
-const client = require('./common/client');
+import { list } from './common/client';
+
+// Import CSS frameworks
+import photon from './static/css/_photon';
+
+// Select framework depending on host OS
+let cssFramework;
+switch (platform) {
+  case 'darwin':
+    cssFramework = photon;
+    break;
+}
 
 // Set API request parameters
 const params = {
@@ -8,4 +22,4 @@ const params = {
   regionCode: 'US',
 };
 
-client.list(params);
+list(params);

@@ -22,6 +22,6 @@ module.exports = {
     path: path.resolve(__dirname, '../app/build'),
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.json', '.scss', '.css'],
   },
 };

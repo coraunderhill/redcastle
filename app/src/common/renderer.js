@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 // Import React components
 import Header from '../components/Header/Header';
 import List from '../components/List/List';
+import Nav from '../components/Nav/Nav';
 
 /**
  * Update React view
@@ -20,9 +21,18 @@ export const updateView = data => {
     view = <List data={data} />
   }
 
-  const ui = <div id="app">
+  const ui = <div className="window">
     <Header />
-    {view}
+    <div className="window-content">
+      <div className="pane-group">
+        <div className="pane-sm sidebar">
+          <Nav />
+        </div>
+        <div className="pane">
+          {view}
+        </div>
+      </div>
+    </div>
   </div>;
 
   render(ui, document.getElementById('root'));

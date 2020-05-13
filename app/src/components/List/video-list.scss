@@ -1,0 +1,12 @@
+.video-list {
+
+  & .video-list-item {
+    display: block;
+
+    & .video-list-item-title {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+}

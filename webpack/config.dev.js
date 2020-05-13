@@ -5,7 +5,6 @@ const merge = require('webpack-merge');
 const base = require('./config.base.js');
 const clean = require('./config.clean.js');
 const electron = require('./config.electron.js');
-const core = require('./config.core.js');
 
 // Common developer configuration values
 const common = {
@@ -13,20 +12,15 @@ const common = {
   watch: true,
 };
 
-// Electron configuration
-const client = merge(common, clean, electron,);
-
 // App configuration
-const app = merge(base, common, {
-  name: 'main',
-  output: {
-    filename: 'res/main.js',
-  },
-  plugins: core.plugins,
+const app = merge(common, base, {
   node: {
     global: true,
   },
   target: 'electron-renderer',
 });
+
+// Electron configuration
+const client = merge(common, clean, electron);
 
 module.exports = [client, app];

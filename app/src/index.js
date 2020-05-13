@@ -5,7 +5,7 @@ import React from 'react';
 import List from './components/List/List';
 
 // Import React renderer
-import { updateView } from './common/renderer';
+import updateView from './common/renderer';
 
 // Import YouTube Data API client
 import list from './common/client';

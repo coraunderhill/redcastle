@@ -30,8 +30,9 @@ const start = () => {
 
     // Match view to response type
     switch (kind) {
-      case 'youtube#videoListResponse':
-      view = <List data={data} />
+      case 'youtube#videoListResponse': {
+        view = <List data={data} />;
+      }
     }
 
     // Pass the view to the renderer

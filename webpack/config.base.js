@@ -1,6 +1,7 @@
 // Import Webpack plugins
 const DotEnvPlugin = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Import core configuration values
 const core = require('./config.core.js');
@@ -10,7 +11,8 @@ module.exports = {
   context: core.context,
   entry: {
     main: core.entry,
-    scss: './src/static/scss/main.scss',
+    photon: './src/static/css/_photon.css',
+    styles: './src/static/scss/main.scss',
   },
   module: {
     rules: [
@@ -26,7 +28,7 @@ module.exports = {
       { // Sass and CSS
         test: /\.(c|sc)ss/,
         loader: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
@@ -38,6 +40,31 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        vendor: {
+          name: 'vendor',
+          test: /node_modules/,
+          chunks: 'all',
+        },
+        styles: {
+          name: 'styles',
+          test: '/\.scss/',
+          chunks: 'all',
+          enforce: true,
+        },
+        photon: {
+          name: 'photon',
+          test: /_photon\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
   output: {
     filename: 'res/[name].js',
     path: core.output.path,
@@ -45,8 +72,11 @@ module.exports = {
   plugins: [
     new DotEnvPlugin(),
     new HtmlWebpackPlugin({
-      cache: false,
-      template: 'src/static/html/template.html',
+      inject: false,
+      template: 'src/static/ejs/template.ejs',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'res/[name].css',
     }),
   ],
   resolve: core.resolve,

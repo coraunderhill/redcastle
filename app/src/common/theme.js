@@ -1,58 +1,48 @@
 // Import Node modules
 import { platform } from 'os';
+import React from 'react';
 
 // Import React components
 import Darwin from '../components/Templates/Darwin';
 import Win32 from '../components/Templates/Win32';
 
 /**
- * Inject frameworks into the DOM
- * @param {string} css Name of the CSS framework to be loaded
- */
-const loadFramework = css => {
-
-  /**
-   *
-   * @param {string} framework Name of the framework file to be loaded
-   */
-  const injectLink = framework => {
-    const exists = document.getElementById('css-fwk');
-    let element;
-    let fwk;
-
-    if (exists === null) {
-      element = document.createElement('link');
-      element.href = `res/${framework}.css`;
-      element.id = 'css-fwk';
-      element.rel = 'stylesheet';
-    }
-    else {
-      element = exists;
-      element.href = framework;
-    }
-
-    return document.head.appendChild(element);
-  }
-
-  if (css == 'photon') {
-    injectLink('photon');
-  }
-}
-
-/**
  * Application theme handler
- * @returns {Object} Template component and any additional resources
+ * @returns {Object} Template component
  */
 export const getTheme = () => {
 
-  switch (platform()) {
-    case 'darwin': {
-      loadFramework('photon');
-      return Darwin;
+  /**
+ * Inject frameworks into the DOM
+ * @param {string} css Name of the CSS framework to be loaded
+ * @returns {Promise} Returns a Promise for frameworks that require injection
+ * or null for ones that don't
+ */
+  const loadFramework = css => {
+
+    // If we're using Photon, inject the link tag for proper CSS
+    if (css == 'photon') {
+      const exists = document.getElementById('css-fwk');
+      console.log(exists)
+
+      if (exists !== null) exists.href = `res/${css}.css`
+      if (exists === null) {
+        const element = document.createElement('link');
+        element.href = `res/${css}.css`;
+        element.id = 'css-fwk';
+        element.rel = 'stylesheet';
+        document.head.appendChild(element);
+      }
     }
-    case 'win32': {
-      return Win32;
-    }
+
   }
+
+  // Get host OS and load any additional resources
+  const os = platform();
+  if (os == 'darwin') {
+    loadFramework('photon');
+    return Darwin;
+  }
+  else if (os == 'win32') return Win32;
 
 };

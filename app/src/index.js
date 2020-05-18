@@ -8,7 +8,7 @@ import List from './components/List/List';
 import updateView from './common/renderer';
 
 // Import YouTube Data API client
-import list from './common/client';
+import { list } from './common/client';
 
 /**
  * Initiates app

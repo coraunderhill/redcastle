@@ -14,8 +14,6 @@ const youtube = google.youtube({
  * @param {string} params.filter Set the data type to be requested (`chart`, `id`, or `myRating`)
  * @returns {Promise} Asyncronous API call
  */
-const list = async params => (
+export const list = async params => (
   await youtube.videos.list(params)
 );
-
-export default list;

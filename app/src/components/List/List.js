@@ -1,4 +1,4 @@
-// Import modules
+// Import Node modules
 import React from 'react';
 
 // Import List view
@@ -25,6 +25,7 @@ const List = props => {
       title,
     } = val.snippet;
 
+    // Convert timestamp
     const date = new Date(publishedAt).toDateString();
     const time = new Date(publishedAt).toLocaleTimeString();
 

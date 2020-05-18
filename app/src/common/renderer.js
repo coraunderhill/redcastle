@@ -7,12 +7,15 @@ import { getTheme } from './theme';
 
 /**
  * Update React view
- * @param {Object} view React component to load with template
+ * @param {Object} View React component to load with template
  */
-const updateView = view => {
+const updateView = View => {
 
+  // Get the React theme component for this platform
   const Theme = getTheme();
-  render(Theme(view), document.getElementById('root'));
+
+  // Render theme with View component
+  render(Theme(View), document.getElementById('root'));
 }
 
 export default updateView;

@@ -1,4 +1,4 @@
-// Import modules
+// Import Node modules
 import React from 'react';
 
 // Import Nav view

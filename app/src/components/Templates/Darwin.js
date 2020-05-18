@@ -12,17 +12,23 @@ import Nav from '../Nav/Nav';
  */
 const Darwin = view => (
   <div className="window">
+
     <Header />
+
     <div className="window-content">
       <div className="pane-group">
+
         <div className="pane-sm sidebar">
           <Nav />
         </div>
+
         <div className="pane">
           {view}
         </div>
+
       </div>
     </div>
+
   </div>
 );
 

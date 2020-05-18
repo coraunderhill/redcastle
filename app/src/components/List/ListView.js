@@ -1,6 +1,9 @@
 // Import Node modules
 import React from 'react';
 
+// Import navigation module
+import { watchVideo } from '../../common/navigate';
+
 // Import resources
 import './video-list';
 
@@ -12,7 +15,6 @@ import './video-list';
  */
 const ListView = props => {
 
-  // Get component properties
   const {
     items,
   } = props;
@@ -20,8 +22,8 @@ const ListView = props => {
   // Iterate over array and map to new list
   const listItems = items.map(item => (
     <div className="video-list-item" key={item.id}>
-      <a><span className="video-list-item-thumb"><img src={item.thumb.default.url} /></span></a>
-      <a><span className="video-list-item-title">{item.title}</span></a>
+      <a onClick={() => watchVideo(item.id)}><span className="video-list-item-thumb"><img src={item.thumb.default.url} /></span></a>
+      <a onClick={() => watchVideo(item.id)}><span className="video-list-item-title">{item.title}</span></a>
       <span className="video-list-item-date"><a>{item.channel}</a> &ndash; {item.date} at {item.time}</span>
     </div>
   ));

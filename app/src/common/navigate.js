@@ -10,15 +10,21 @@ import updateView from './renderer';
 // Import YouTube Data API client
 import { list } from './client';
 
-export const watchVideo = videoId => {
+/**
+ * Render the Watch component with a selected video
+ * @param {string} videoID ID of the video to display
+ */
+export const watchVideo = videoID => {
 
+  // Construct API parameters
   const params = {
-    id: videoId,
+    id: videoID,
     part: 'snippet,statistics',
   };
 
-  list(params).then(res => {
-    updateView(<Watch data={res.data} />);
-  });
+  // Query API and update view
+  list(params).then(res => (
+    updateView(<Watch data={res.data} />)
+  ));
 
 }

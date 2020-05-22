@@ -3,8 +3,8 @@ import { platform } from 'os';
 import React from 'react';
 
 // Import React components
-import Darwin from '../components/Templates/Darwin';
-import Win32 from '../components/Templates/Win32';
+import Darwin from 'Components/Templates/Darwin';
+import Win32 from 'Components/Templates/Win32';
 
 let theme = null;
 

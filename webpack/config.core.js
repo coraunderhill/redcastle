@@ -22,6 +22,11 @@ module.exports = {
     path: path.resolve(__dirname, '../app/build'),
   },
   resolve: {
+    alias: {
+      Common: path.resolve(__dirname, '../app/src/common'),
+      Components: path.resolve(__dirname, '../app/src/components'),
+      Static: path.resolve(__dirname, '../app/src/static'),
+    },
     extensions: ['.js', '.json', '.scss', '.css'],
   },
 };

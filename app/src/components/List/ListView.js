@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import navigation module
-import { watchVideo } from '../../common/navigate';
+import { watchVideo } from 'Common/navigate';
 
 // Import resources
 import './video-list';

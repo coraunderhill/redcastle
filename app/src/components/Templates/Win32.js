@@ -7,10 +7,11 @@ import Nav from '../Nav/Nav';
 
 /**
  * Windows app template
- * @param {Object} view React component to be served
+ * @param {Object} props Component properties
+ * @param {Object} props.children Child components for rendering
  * @returns {Object} React component
  */
-const Win32 = view => (
+const Win32 = props => (
   <div className="ms-Grid">
 
     <div className="ms-Grid-row">
@@ -24,7 +25,7 @@ const Win32 = view => (
         <Nav />
       </div>
       <div className="ms-Grid-col ms-sm12 ms-md8 ms-lg8">
-        {view}
+        {props.children}
       </div>
     </div>
 

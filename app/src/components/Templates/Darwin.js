@@ -7,25 +7,24 @@ import Nav from '../Nav/Nav';
 
 /**
  * macOS app template
- * @param {Object} view React component to be served
+ * @param {Object} props Component properties
+ * @param {Object} props.children Child components to be rendered
  * @returns {Object} React component
  */
-const Darwin = view => (
+const Darwin = props => (
   <div className="window">
 
     <Header />
 
     <div className="window-content">
       <div className="pane-group">
-
         <div className="pane-sm sidebar">
           <Nav />
         </div>
 
         <div className="pane">
-          {view}
+          {props.children}
         </div>
-
       </div>
     </div>
 

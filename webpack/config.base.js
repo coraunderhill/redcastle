@@ -28,7 +28,12 @@ module.exports = {
       { // Sass and CSS
         test: /\.(c|sc)ss/,
         loader: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+            },
+          },
           'css-loader',
           {
             loader: 'sass-loader',

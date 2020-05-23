@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import React components
-import Player from '../Player/Player';
+import Player from 'Components/Player/Player';
 
 /**
  * Video page view

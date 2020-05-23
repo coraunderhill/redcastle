@@ -8,6 +8,7 @@ const core = require('./config.core.js');
 
 // Base configuration
 module.exports = {
+  name: 'app',
   context: core.context,
   entry: {
     main: core.entry,

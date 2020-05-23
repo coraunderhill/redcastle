@@ -1,6 +1,7 @@
 // Import Node modules
 import { BrowserWindow, app } from 'electron';
-import { startServer } from './common/server';
+import { platform } from 'os';
+import { startServer } from 'Common/server';
 
 // Instantiate the window to prevent eaten into memory
 let window;
@@ -14,7 +15,7 @@ app.on('ready', () => {
   // Create a new app window and load local server
   window = new BrowserWindow({
     height: 600,
-    titleBarStyle: 'hidden',
+    titleBarStyle: (platform() == 'darwin') ? 'hidden' : 'default',
     webPreferences: {
       nodeIntegration: true,
     },

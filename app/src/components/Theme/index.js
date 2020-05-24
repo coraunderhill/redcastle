@@ -14,8 +14,7 @@ const os = remote.require('os');
  * @type {string}
  * @default
  */
-// const host = os.platform();
-const host = 'win32';
+const host = os.platform();
 
 /**
  * Injects the CSS framework into the DOM

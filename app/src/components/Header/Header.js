@@ -5,7 +5,7 @@ import React from 'react';
 import { getThemeComponent } from 'Components/Theme/';
 
 /**
- * App header
+ * Header component
  * @returns {Object} React component
  */
 const Header = () => {

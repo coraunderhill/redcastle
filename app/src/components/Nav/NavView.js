@@ -1,6 +1,9 @@
 // Import Node modules
 import React from 'react';
 
+// Import theme component getter
+import { getThemeComponent } from 'Components/Theme';
+
 /**
  * Navigation view
  * @param {Object} props Component properties
@@ -11,30 +14,14 @@ const NavView = props => {
 
   const { items } = props;
 
+  const NavItem = getThemeComponent('NavItem');
+
   // Iterate over items and map to new list
-  const navItems = [];
-  for (let [key, val] of Object.entries(items)) {
-    const {
-      icon,
-      isActive,
-      text,
-    } = val;
+  const navItems = items.map(({label, name, path}) => (
+    <NavItem key={name} label={label} name={name} path={path} />
+  ));
 
-    navItems.push(
-      <a className={`nav-group-item${isActive ? ' active' : ''}`} key={key}>
-        <span className={`icon icon-${icon}`}></span>
-        {text}
-      </a>);
-  }
-
-  return (
-    <div className="nav">
-      <nav className="nav-group">
-        <h5 className="nav-group-title">Favorites</h5>
-        {navItems}
-      </nav>
-    </div>
-  );
+  return navItems;
 
 }
 

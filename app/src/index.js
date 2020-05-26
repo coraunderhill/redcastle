@@ -25,18 +25,9 @@ const start = () => {
   // Call API then update view
   list(params).then(res => {
     const { data } = res;
-    const { kind } = data;
-    let view;
-
-    // Match view to response type
-    switch (kind) {
-      case 'youtube#videoListResponse': {
-        view = <List data={data} />;
-      }
-    }
 
     // Pass the view to the renderer
-    updateView(view);
+    updateView(<List data={data} />);
   });
 
 }

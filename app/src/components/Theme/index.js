@@ -1,6 +1,6 @@
 // Import Node modules
 import { remote } from 'electron';
-import React, { useState } from 'react';
+import React from 'react';
 
 // Import theme components
 import Darwin from './Darwin/';

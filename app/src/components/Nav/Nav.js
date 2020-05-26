@@ -16,6 +16,7 @@ import { getThemeComponent } from 'Components/Theme/';
  */
 const Nav = () => {
 
+  // Import Nav wrapper component from theme
   const Wrapper = getThemeComponent('Nav');
 
   // Iterate over menu items and map to new list

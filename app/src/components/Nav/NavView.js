@@ -8,12 +8,13 @@ import { getThemeComponent } from 'Components/Theme';
  * Navigation view
  * @param {Object} props Component properties
  * @param {Object} props.items Navigation items to be rendered
- * @returns {Object} React component
+ * @returns {Array} React components
  */
 const NavView = props => {
 
   const { items } = props;
 
+  // Import NavItem wrapper component from theme
   const NavItem = getThemeComponent('NavItem');
 
   // Iterate over items and map to new list

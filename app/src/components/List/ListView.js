@@ -15,9 +15,7 @@ import './video-list';
  */
 const ListView = props => {
 
-  const {
-    items,
-  } = props;
+  const { items } = props;
 
   // Iterate over array and map to new list
   const listItems = items.map(item => (

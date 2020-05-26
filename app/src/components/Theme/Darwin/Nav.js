@@ -27,7 +27,6 @@ const Nav = props => {
 /**
  * macOS navigation group item
  * @param {Object} props Component properties
- * @param {string|number} props.key Item key
  * @param {string} props.label Item label text
  * @param {string} props.name Item's name
  * @param {string} props.path = Link path

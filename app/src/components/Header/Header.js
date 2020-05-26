@@ -10,6 +10,7 @@ import { getThemeComponent } from 'Components/Theme/';
  */
 const Header = () => {
 
+  // Import Header wrapper component from theme
   const Wrapper = getThemeComponent('Header');
 
   return (

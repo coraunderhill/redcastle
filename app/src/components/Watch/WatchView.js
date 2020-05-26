@@ -7,7 +7,7 @@ import Player from 'Components/Player/Player';
 /**
  * Video page view
  * @param {Object} props Component properties
- * @param {Array} props.videoDetails Video details to be rendered
+ * @param {Object} props.videoDetails Video details to be rendered
  * @returns {Object} React component
  */
 const WatchView = props => {

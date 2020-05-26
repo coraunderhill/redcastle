@@ -6,12 +6,8 @@ import sl from 'server-lite';
  */
 export const startServer = () => {
 
-  // Create the handler and set handler properties
-  const handler = new sl.handler();
-  handler.concatenateCssFolderPath = '/res/';
-  handler.concatenateJavscriptFolderPath = '/res/';
-  handler.indexPath = '/index.html';
-  handler.webRoot = './app/build';
+  // Create the handler
+  const handler = new sl.handler(undefined, './app/build', '/index.html');
 
   /**
    * Handles HTTP requests

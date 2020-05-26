@@ -17,6 +17,7 @@ const Theme = props => {
 
   const { children } = props;
 
+  // Set theme parameters
   const themeParams = getTheme({
     themeName: 'Dark',
     accent: blue500,

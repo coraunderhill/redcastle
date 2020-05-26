@@ -1,7 +1,7 @@
 // Import Node modules
 import React from 'react';
 
-// Import Nav view
+// Import Watch view
 import WatchView from './WatchView';
 
 /**

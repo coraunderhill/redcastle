@@ -7,17 +7,11 @@ import menuItems from 'Static/json/menu-nav.json';
 // Import Nav view
 import NavView from './NavView';
 
-// Import theme component getter
-import { getThemeComponent } from 'Components/Theme/';
-
 /**
  * Navigation component
  * @returns {Object} React component
  */
 const Nav = () => {
-
-  // Import Nav wrapper component from theme
-  const Wrapper = getThemeComponent('Nav');
 
   // Iterate over menu items and map to new list
   const items = [];
@@ -31,11 +25,8 @@ const Nav = () => {
     items.push(item);
   }
 
-  return (
-    <Wrapper>
-      <NavView items={items} />
-    </Wrapper>
-  );
+  return <NavView items={items} />;
+
 }
 
 export default Nav;

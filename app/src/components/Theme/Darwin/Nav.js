@@ -25,6 +25,23 @@ const Nav = props => {
 }
 
 /**
+ * macOS navigation content
+ * @param {Object} props Component properties
+ * @returns {Array} Array of NavItem components
+ */
+export const NavContent = props => {
+
+  const { items } = props;
+
+  const result = items.map(({label, name, path}) => (
+    <NavItem key={name} label={label} name={name} path={path} />
+  ));
+
+  return result;
+
+}
+
+/**
  * macOS navigation group item
  * @param {Object} props Component properties
  * @param {string} props.label Item label text

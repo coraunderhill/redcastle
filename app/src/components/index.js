@@ -3,8 +3,8 @@ import { remote } from 'electron';
 import React from 'react';
 
 // Import theme components
-import Darwin from './Darwin';
-import Win32 from './Win32';
+import Darwin from './Darwin/Theme';
+import Win32 from './Win32/Theme';
 
 // Import OS module from Node
 const os = remote.require('os');
@@ -63,31 +63,23 @@ export const getThemeComponent = name => {
 }
 
 /**
- * Gets the current theme based off of the host OS
+ * Main app component
  * @param {Object} props Component properties
  * @returns {Object} React component
  */
-const Theme = props => {
+const App = props => {
 
   const { children } = props;
-
-  /**
-   * Resulting theme component
-   * @member
-   */
-  let Result;
 
   // Set the theme based on the host OS
   if (host == 'darwin') {
     injectFwk('photon');
-    Result = Darwin.Theme;
+    return <Darwin>{children}</Darwin>
   }
   else if (host == 'win32') {
-    Result = Win32.Theme;
+    return <Win32>{children}</Win32>
   }
-
-  return <Result>{children}</Result>;
 
 }
 
-export default Theme;
+export default App;

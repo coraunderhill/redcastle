@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Import React components
-import Header from 'Components/Header/Header';
-import Nav from 'Components/Nav/Nav';
+import Header from './Header/Header';
+import Nav from './Nav/Nav';
 
 /**
  * macOS app template

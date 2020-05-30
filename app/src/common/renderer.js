@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Import React components
-import Theme from 'Components/Theme';
+import App from 'Components/';
 
 /**
  * Update React view
@@ -11,7 +11,7 @@ import Theme from 'Components/Theme';
  */
 const updateView = View => {
 
-  render(<Theme>{View}</Theme>, document.getElementById('root'));
+  render(<App>{View}</App>, document.getElementById('root'));
 
 }
 

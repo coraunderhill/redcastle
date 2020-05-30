@@ -1,10 +1,7 @@
 {
   "home": {
+    "icon": "Home",
     "label": "Home",
     "path": "/"
   },
-  "about": {
-    "label": "About",
-    "path": "/"
-  }
 }

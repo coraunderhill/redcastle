@@ -1,7 +1,9 @@
 @charset "utf-8";
+@use 'video-list';
 
-#root {
-  height: 100vh;
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
 .window {
@@ -11,4 +13,13 @@
   & .window-content {
     height: 100%;
   }
+}
+
+#root {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }

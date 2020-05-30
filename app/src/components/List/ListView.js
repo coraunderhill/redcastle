@@ -4,9 +4,6 @@ import React from 'react';
 // Import navigation module
 import { watchVideo } from 'Common/navigate';
 
-// Import resources
-import './video-list';
-
 /**
  * Video list view
  * @param {Object} props Component properties

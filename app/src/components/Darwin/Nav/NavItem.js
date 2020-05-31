@@ -16,19 +16,20 @@ export const NavItem = props => {
   const {
     icon,
     label,
+    name,
   } = props;
-  let { path } = props;
 
-  // Determine appropriate onClick handler
-  switch (path) {
-    case '/': {
-      path = mostPopular;
-    }
+  /**
+   *  Navigation item onClick handler
+   * @param {string} i Item name
+   */
+  const _onClick = i => {
+    if (i === 'home') mostPopular();
   }
 
   return (
-    <a className="nav-group-item" onClick={() => path()}>
-      <span className={`icon icon-${icon.toLowerCase()}`}></span>
+    <a className="nav-group-item" onClick={() => _onClick(name)}>
+      <span className={`icon icon-${icon}`}></span>
       <span className="item-label">{label}</span>
     </a>
   );

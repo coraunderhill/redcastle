@@ -14,12 +14,12 @@ import navItems from 'Common/navItems';
 const Nav = () => {
 
   // Iterate over nav items
-  const items = navItems().map(({ icon, label, path} ) => (
+  const items = navItems().map(({ icon, label, name} ) => (
     <NavItem
       icon={icon}
-      key={label}
+      key={name}
       label={label}
-      path={path}
+      name={name}
     />
   ));
 

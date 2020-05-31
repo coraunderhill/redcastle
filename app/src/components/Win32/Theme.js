@@ -7,8 +7,7 @@ import { initializeIcons } from '@uifabric/icons';
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/platform/_win32-fluentui';
-import 'Static/scss/platform/_win32-headers';
+import 'Static/scss/platform/_win32-fabric';
 
 /**
  * Windows app template

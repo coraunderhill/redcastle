@@ -1,13 +1,14 @@
 // Import Node modules
 import React from 'react';
-import { initializeIcons } from '@uifabric/icons';
 import { Fabric } from '@fluentui/react/lib/Fabric';
+import { initializeIcons } from '@uifabric/icons';
 
 // Import React components
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/platform/_win32-fabric';
+import 'Static/scss/platform/_win32-fluentui';
+import 'Static/scss/platform/_win32-headers';
 
 /**
  * Windows app template
@@ -19,7 +20,6 @@ const Theme = props => {
 
   const { children } = props;
 
-  // Initialize Fluent UI icons
   initializeIcons();
 
   return (

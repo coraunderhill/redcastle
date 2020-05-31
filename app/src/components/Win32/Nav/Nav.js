@@ -17,24 +17,55 @@ import 'Static/scss/platform/_win32-nav';
  */
 const Nav = () => {
 
+  /**
+   *  Handles navigation link click events
+   * @param {Event} e onClick event
+   * @param {Object} item User-selected item
+   */
   const _onLinkClick = (e, item) => {
 
-    if (!item) return null;
-    if (item.name === 'Home') mostPopular();
+    const { name } = item;
+
+    if (name === 'Home') mostPopular();
 
   }
 
-  // Iterate over menu items
-  const items = navItems().map(({ icon, label, path} ) => (
-    { icon: icon, name: label }
-  ));
+  /**
+   * Renders navigation group headers
+   * @param {Object} group Navigation group
+   * @returns {Object} React component
+   */
+  const _onRenderGroupHeader = group => <h3>{group.name}</h3>;
 
-  // Create navigation groups
-  const navGroups = [{ links: items }];
+  // Iterate over menu items
+  // We set i low so that it starts at zero in our loop
+  let i = -1;
+  const items = navItems().map(({ icon, label} ) => {
+    switch (icon) {
+      case 'home': {
+        break;
+      }
+    }
+
+    i++;
+
+    return {
+      icon: icon,
+      key: `item${i}`,
+      name: label,
+    };
+  });
+
+  const groups = [{
+    name: 'Redcastle',
+    links: items,
+  }];
 
   return <FluentNav
-    groups={navGroups}
+    groups={groups}
+    initialSelectedKey="item0"
     onLinkClick={_onLinkClick}
+    onRenderGroupHeader={_onRenderGroupHeader}
   />;
 
 }

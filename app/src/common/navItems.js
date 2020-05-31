@@ -10,7 +10,6 @@ const navItems = () => {
       icon: val.icon,
       label: val.label,
       name: key,
-      path: val.path,
     };
 
     items.push(item);

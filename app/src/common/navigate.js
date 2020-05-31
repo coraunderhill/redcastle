@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Import React components
-import List from 'Components/List/List';
-import Watch from 'Components/Watch/Watch';
+import List from 'Components/Global/List/List';
+import Watch from 'Components/Global/Watch/Watch';
 
 // Import React renderer
 import updateView from './renderer';

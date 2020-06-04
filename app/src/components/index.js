@@ -2,9 +2,11 @@
 import { remote } from 'electron';
 import React from 'react';
 
-// Import theme components
+// Import React components
 import Darwin from './Darwin/Theme';
+import { WatchDetails as WatchDetailsMac } from './Darwin/Watch/Watch';
 import Win32 from './Win32/Theme';
+import { WatchDetails as WatchDetailsWin } from './Win32/Watch/Watch';
 
 // Import OS module from Node
 const os = remote.require('os');
@@ -51,14 +53,19 @@ const injectFwk = framework => {
 */
 export const getThemeComponent = name => {
 
-  switch (host) {
-    case 'darwin': {
-      return Darwin[`${name}`];
-    }
-    case 'win32': {
-      return Win32[`${name}`];
-    }
-  }
+  const DarwinExports = {
+    WatchDetails: WatchDetailsMac,
+  };
+
+  const Win32Exports = {
+    WatchDetails: WatchDetailsWin,
+  };
+
+  const which = (host == 'darwin') ? DarwinExports : Win32Exports;
+
+  if (!(name in which)) console.error(`Requested component not found: ${name}`);
+
+  return which[name];
 
 }
 

@@ -24,7 +24,9 @@ const Theme = props => {
   return (
     <Fabric>
       <Nav />
-      {children}
+      <div className="ms-Grid">
+        {children}
+      </div>
     </Fabric>
   );
 };

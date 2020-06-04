@@ -4,6 +4,9 @@ import React from 'react';
 // Import React components
 import Player from 'Components/Global/Player/Player';
 
+// Import theme component getter
+import { getThemeComponent } from '../..'
+
 /**
  * Video page view
  * @param {Object} props Component properties
@@ -29,17 +32,19 @@ const WatchView = props => {
     title,
   } = snippet;
 
+  // Get theme components
+  const WatchDetails = getThemeComponent('WatchDetails');
+
   return (
     <div className="watch-video">
-      <div className="watch-player"><Player videoID={id} /></div>
-      <div className="watch-video-details">
-        <span className="watch-video-details-title">{title}</span>
-        <br />
-        <span className="watch-video-details-channel-title">{channelTitle}</span>
-        &nbsp;–&nbsp;
-        <span className="watch-video-details-publishedAt">{publishedAt}</span>
-        <span className="watch-video-details-description">{description}</span>
+      <div className="watch-player">
+        <Player videoID={id} />
       </div>
+      <WatchDetails
+        channel={channelTitle}
+        text={description}
+        title={title}
+      />
     </div>
   );
 

@@ -47,6 +47,16 @@ const injectFwk = framework => {
 }
 
 /**
+ * Initializes the theme with any relavent frameworks.
+ * Should be called immediately after the app launches
+ */
+export const initTheme = () => {
+
+  // macOS uses the Photon CSS framework
+  if (host == 'darwin') injectFwk('photon');
+}
+
+/**
 * Gets the current theme directory for loading in platform-specific components
 * @param {string} name Component name to be returned
 * @returns {Object} Specified React component from appropriate theme
@@ -93,11 +103,10 @@ const App = props => {
 
   // Set the theme based on the host OS
   if (host == 'darwin') {
-    injectFwk('photon');
-    return <Darwin>{children}</Darwin>
+    return <Darwin children={children} />
   }
   else if (host == 'win32') {
-    return <Win32>{children}</Win32>
+    return <Win32 children={children} />
   }
 
 }

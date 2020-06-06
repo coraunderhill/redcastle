@@ -4,6 +4,9 @@ import React from 'react';
 // Import React components
 import List from 'Components/Global/List/List';
 
+// Import theme init
+import { initTheme } from 'Components';
+
 // Import React renderer
 import updateView from 'Common/renderer';
 
@@ -24,12 +27,11 @@ const start = () => {
 
   // Call API then update view
   list(params).then(res => {
-    const { data } = res;
-
     // Pass the view to the renderer
-    updateView(<List data={data} />, '/');
+    updateView(<List data={res.data} />, '/');
   });
 
 }
 
+initTheme();
 start();

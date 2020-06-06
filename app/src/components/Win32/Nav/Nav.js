@@ -3,7 +3,7 @@ import React from 'react';
 import { Nav as FluentNav } from '@fluentui/react/lib/Nav';
 
 // Import navigation module
-import { mostPopular } from 'Common/navigate';
+import { home } from 'Common/navigate';
 
 // Import nav items
 import navItems from 'Common/navItems';
@@ -24,9 +24,11 @@ const Nav = () => {
    */
   const _onLinkClick = (e, item) => {
 
+    // Get the name of the clicked item
     const { name } = item;
 
-    if (name === 'Home') mostPopular();
+    // Navigate accordingly
+    if (name === 'Home') home();
 
   }
 

@@ -2,12 +2,13 @@
 import React from 'react';
 
 // Import navigation module
-import { mostPopular } from 'Common/navigate';
+import { home } from 'Common/navigate';
 
 /**
  * macOS navigation group item
  * @param {Object} props Component properties
- * @param {string} props.label Item's label
+ * @param {string} props.icon Item icon
+ * @param {string} props.label Item label
  * @param {string} props.path = Link path
  * @returns {Object} React component
  */
@@ -24,7 +25,7 @@ export const NavItem = props => {
    * @param {string} i Item name
    */
   const _onClick = i => {
-    if (i === 'home') mostPopular();
+    if (i === 'home') home();
   }
 
   return (

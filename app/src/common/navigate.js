@@ -12,11 +12,14 @@ import updateView from './renderer';
 import { list } from './client';
 
 /**
- * Render the List component with trending videos
+ * Render the List component with popular videos
  */
-export const mostPopular = () => {
+export const home = () => {
 
-  // Set API parameters
+  /**
+   * Sets the API parameters
+   * @type {Object}
+   */
   const params = {
     chart: 'mostPopular',
     part: 'id,snippet',
@@ -25,7 +28,7 @@ export const mostPopular = () => {
 
   // Call API and update view
   list(params).then(res => (
-    updateView(<List data={res.data} />)
+    updateView(<List data={res.data} />, '/')
   ));
 }
 
@@ -35,15 +38,34 @@ export const mostPopular = () => {
  */
 export const watchVideo = videoID => {
 
-  // Set API parameters
+  /**
+   * Sets the API parameters
+   * @type {Object}
+   */
   const params = {
     id: videoID,
     part: 'snippet,statistics',
   };
 
   // Call API and update view
-  list(params).then(res => (
-    updateView(<Watch data={res.data} />)
-  ));
+  list(params).then(res => {
+    /**
+     * youtube#video API response object
+     * @type {Object}
+     */
+    const item = res.data.items.shift();
+
+    // Deconstruct the video ID for the history URL
+    const { id } = item;
+
+    /**
+     * URL for using in the history object
+     * @type {string}
+     * @default
+     */
+    const url = `/watch?v=${id}`;
+
+    updateView(<Watch data={item} />, url);
+  });
 
 }

@@ -15,14 +15,12 @@ import { getThemeComponent } from '../..'
  */
 const WatchView = props => {
 
-  const { videoDetails } = props;
-
   // Deconstruct video details
   const {
     id,
     snippet,
-    stats,
-  } = videoDetails;
+    statistics,
+  } = props.videoDetails;
 
   // Rinse and repeat with the detail objects
   const {

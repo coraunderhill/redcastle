@@ -27,7 +27,7 @@ const start = () => {
     const { data } = res;
 
     // Pass the view to the renderer
-    updateView(<List data={data} />);
+    updateView(<List data={data} />, '/');
   });
 
 }

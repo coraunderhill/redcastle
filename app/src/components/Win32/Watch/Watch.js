@@ -5,9 +5,9 @@ import { Text } from '@fluentui/react/lib/Text';
 /**
  *
  * @param {Object} props Component properties
- * @param {string} channel Channel name
- * @param {string} text Video detail text
- * @param {string} title Video title
+ * @param {string} props.channel Channel name
+ * @param {string} props.text Video detail text
+ * @param {string} props.title Video title
  */
 export const WatchDetails = props => {
 

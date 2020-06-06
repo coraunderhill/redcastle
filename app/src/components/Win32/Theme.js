@@ -19,6 +19,7 @@ const Theme = props => {
 
   const { children } = props;
 
+  // Initialize Fabric UI icons
   initializeIcons();
 
   return (

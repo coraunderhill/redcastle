@@ -53,16 +53,29 @@ const injectFwk = framework => {
 */
 export const getThemeComponent = name => {
 
+  /**
+   * Darwin theme exports
+   * @type {Object}
+   */
   const DarwinExports = {
     WatchDetails: WatchDetailsMac,
   };
 
+  /**
+   * Win32 theme exports
+   * @type {Object}
+   */
   const Win32Exports = {
     WatchDetails: WatchDetailsWin,
   };
 
+  /**
+   * Automatically resolves the appropriate theme object
+   * @type {Object}
+   */
   const which = (host == 'darwin') ? DarwinExports : Win32Exports;
 
+  // Make sure the component we requested is in the current theme
   if (!(name in which)) console.error(`Requested component not found: ${name}`);
 
   return which[name];

@@ -13,7 +13,10 @@ import navItems from 'Common/navItems';
  */
 const Nav = () => {
 
-  // Iterate over nav items
+  /**
+   * Array of NavItem components
+   * @type {Array}
+   */
   const items = navItems().map(({ icon, label, name} ) => (
     <NavItem
       icon={icon}

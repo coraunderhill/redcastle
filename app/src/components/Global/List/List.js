@@ -14,8 +14,13 @@ const List = props => {
 
   const { data } = props;
 
-  // Iterate over object and map to new list
+  /**
+   * List items to be passed to the view
+   * @type {Array}
+   */
   let listItems = [];
+
+  // Iterate over the response items
   for (let [key, val] of Object.entries(data.items)) {
     const { id } = val;
     const {
@@ -29,6 +34,7 @@ const List = props => {
     const date = new Date(publishedAt).toDateString();
     const time = new Date(publishedAt).toLocaleTimeString();
 
+    // Add the new video info to the array
     listItems.push({
       id: id,
       channel: channelTitle,

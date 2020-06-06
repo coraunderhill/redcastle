@@ -12,23 +12,14 @@ import WatchView from './WatchView';
  */
 const Watch = props => {
 
-  const { data } = props;
-
-  // Deconstruct video data from single-item array
+  // Deconstruct video data
   const {
     id,
     snippet,
     statistics,
-  } = data.items[0];
+  } = props.data;
 
-  // Wrap them up in an object for easier packaging
-  const videoDetails = {
-    id: id,
-    snippet: snippet,
-    stats: statistics,
-  }
-
-  return <WatchView videoDetails={videoDetails} />;
+  return <WatchView videoDetails={{id, snippet, statistics}} />;
 }
 
 export default Watch;

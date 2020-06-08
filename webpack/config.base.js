@@ -12,7 +12,6 @@ module.exports = {
   context: core.context,
   entry: {
     main: core.entry,
-    photon: './src/static/css/_photon.css',
     styles: './src/static/scss/main.scss',
   },
   module: {

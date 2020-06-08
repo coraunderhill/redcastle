@@ -5,6 +5,9 @@ import React from 'react';
 import Header from './Header/Header';
 import Nav from './Nav/Nav';
 
+// Import resources
+import 'Static/scss/photon/_photon.scss';
+
 /**
  * macOS app template
  * @param {Object} props Component properties

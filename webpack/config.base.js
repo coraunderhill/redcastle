@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     main: core.entry,
     styles: './src/renderer/static/scss/main.scss',
+    photon: './src/renderer/static/scss/photon/_photon.css',
   },
   module: {
     rules: [

@@ -24,7 +24,7 @@ app.on('ready', () => {
    * @default
    */
   const bgColor = (theme.shouldUseDarkColors)
-    ? '#FF292A2B'
+    ? '#CC292A2B'
     : '#CCFFFFFF';
 
   window = new BrowserWindow({
@@ -32,7 +32,7 @@ app.on('ready', () => {
     height: 600,
     titleBarStyle: 'hidden',
     transparent: true,
-    vibrancy: 'sheet',
+    vibrancy: 'sidebar',
     webPreferences: {
       nodeIntegration: true,
     },

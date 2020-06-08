@@ -1,5 +1,50 @@
-@use 'photon.css';
-
 .pane {
   background-color: #fff;
+}
+
+.toolbar {
+  z-index: -1;
+}
+
+.window {
+  box-shadow: inset 0 0 0 1px rgba(137, 138, 139, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .title {
+    color: #c4c5c6;
+  }
+
+  .toolbar {
+    background-color: #4a4b4c;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a4b4c), color-stop(100%, #3a3a3b));
+    background-image: -webkit-linear-gradient(top, #4a4b4c 0%, #3a3a3b 100%);
+    background-image: linear-gradient(to bottom, #4a4b4c 0%, #3a3a3b 100%);
+  }
+
+  .toolbar-header {
+    border-bottom: 1px solid #050505;
+  }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+  .title {
+    color: #555;
+  }
+
+  .toolbar {
+    background-color: #e8e6e8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8e6e8), color-stop(100%, #d1cfd1));
+    background-image: -webkit-linear-gradient(top, #e8e6e8 0%, #d1cfd1 100%);
+    background-image: linear-gradient(to bottom, #e8e6e8 0%, #d1cfd1 100%);
+    box-shadow: inset 0 1px 0 #f5f4f5;
+  }
+
+  .toolbar-header {
+    border-bottom: 1px solid #c2c0c2;
+  }
+
 }

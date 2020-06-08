@@ -123,8 +123,6 @@
 
  * {
    cursor: default;
-   -webkit-user-drag: text;
-   /* -webkit-user-select: none; */
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
  }
@@ -195,7 +193,6 @@
    left: 0;
    display: flex;
    flex-direction: column;
-   /* background-color: #fff; */
  }
 
  .window-content {
@@ -294,10 +291,6 @@
 
  .padded-bottom-more {
    padding-bottom: 20px;
- }
-
- .sidebar {
-   /* background-color: #f5f5f4; */
  }
 
  .draggable {
@@ -503,11 +496,6 @@
 
  .toolbar {
    min-height: 22px;
-   box-shadow: inset 0 1px 0 #f5f4f5;
-   background-color: #e8e6e8;
-   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8e6e8), color-stop(100%, #d1cfd1));
-   background-image: -webkit-linear-gradient(top, #e8e6e8 0%, #d1cfd1 100%);
-   background-image: linear-gradient(to bottom, #e8e6e8 0%, #d1cfd1 100%);
    -webkit-app-region: drag;
  }
  .toolbar:before, .toolbar:after {
@@ -518,9 +506,6 @@
    clear: both;
  }
 
- .toolbar-header {
-   border-bottom: 1px solid #c2c0c2;
- }
  .toolbar-header .title {
    margin-top: 1px;
  }
@@ -535,7 +520,6 @@
    font-size: 12px;
    font-weight: 400;
    text-align: center;
-   color: #555;
    cursor: default;
  }
 

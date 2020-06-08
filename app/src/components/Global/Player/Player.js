@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
  *  Video player component
  * @param {Object} props Component properties
  * @param {Object} props.videoID ID of the video to be played
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const Player = props => {
 
@@ -18,7 +18,10 @@ const Player = props => {
    */
   const _OnReady = event => event.target.pauseVideo();
 
-  // Set player parameters
+  /**
+   * Player API parameters
+   * @type {Object}
+   */
   const params = {
     playerVars: {
       enablejsapi: 1,

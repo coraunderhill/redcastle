@@ -1,5 +1,29 @@
 @media (prefers-color-scheme: light) {
 
+  body {
+    color: #333;
+  }
+
+  .pane {
+    border-left: 1px solid #b3b4b5;
+    background-color: #fff;
+  }
+
+  .nav-group {
+
+    & .nav-group-item {
+      color: #333;
+
+      & .icon {
+        color: #737475;
+      }
+    }
+
+    & .nav-group-title {
+      color: #666;
+    }
+  }
+
   .title {
     color: #555;
   }

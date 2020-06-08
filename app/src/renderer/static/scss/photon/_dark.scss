@@ -1,5 +1,30 @@
 @media (prefers-color-scheme: dark) {
 
+  body {
+    color: #dededf;
+  }
+
+  .pane {
+    border-left: 1px solid #050505;
+    background-color: #292a2b;
+  }
+
+  .nav-group {
+
+    & .nav-group-item {
+      color: #fff;
+
+      & .icon {
+        color: #999a9b;
+      }
+    }
+
+    & .nav-group-title {
+      color: #b2b3b4;
+    }
+
+  }
+
   .title {
     color: #c4c5c6;
   }
@@ -13,6 +38,10 @@
 
   .toolbar-header {
     border-bottom: 1px solid #050505;
+  }
+
+  .window {
+    box-shadow: inset 0 0 0 1px rgba(137, 138, 139, 0.4);
   }
 
 }

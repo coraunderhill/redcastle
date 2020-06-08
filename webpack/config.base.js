@@ -12,7 +12,7 @@ module.exports = {
   context: core.context,
   entry: {
     main: core.entry,
-    styles: './src/static/scss/main.scss',
+    styles: './src/renderer/static/scss/main.scss',
   },
   module: {
     rules: [
@@ -78,7 +78,7 @@ module.exports = {
     new DotEnvPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
-      template: 'src/static/ejs/template.ejs',
+      template: 'src/renderer/static/ejs/template.ejs',
     }),
     new MiniCssExtractPlugin({
       filename: 'res/[name].css',

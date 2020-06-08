@@ -8,7 +8,7 @@ const core = require('./config.core.js');
 module.exports = {
   name: 'electron',
   context: core.context,
-  entry: './src/electron.js',
+  entry: './src/main',
   module: {
     rules: [
       core.module.rules.js,

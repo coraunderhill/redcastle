@@ -4,7 +4,7 @@ const path = require('path');
 // Set core configuration values to be referenced
 module.exports = {
   context: path.resolve(__dirname, '../app'),
-  entry: './src',
+  entry: './src/renderer',
   module: {
     rules: {
       js: { // JavaScript
@@ -23,9 +23,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Common: path.resolve(__dirname, '../app/src/common'),
-      Components: path.resolve(__dirname, '../app/src/components'),
-      Static: path.resolve(__dirname, '../app/src/static'),
+      Common: path.resolve(__dirname, '../app/src/renderer/common'),
+      Components: path.resolve(__dirname, '../app/src/renderer/components'),
+      Static: path.resolve(__dirname, '../app/src/renderer/static'),
     },
     extensions: ['.js', '.json', '.scss', '.css'],
   },

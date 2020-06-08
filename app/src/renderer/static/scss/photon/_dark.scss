@@ -1,0 +1,18 @@
+@media (prefers-color-scheme: dark) {
+
+  .title {
+    color: #c4c5c6;
+  }
+
+  .toolbar {
+    background-color: #4a4b4c;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a4b4c), color-stop(100%, #3a3a3b));
+    background-image: -webkit-linear-gradient(top, #4a4b4c 0%, #3a3a3b 100%);
+    background-image: linear-gradient(to bottom, #4a4b4c 0%, #3a3a3b 100%);
+  }
+
+  .toolbar-header {
+    border-bottom: 1px solid #050505;
+  }
+
+}

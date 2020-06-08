@@ -8,7 +8,7 @@ import { watchVideo } from 'Common/navigate';
  * Video list view
  * @param {Object} props Component properties
  * @param {Array} props.items List items to be displayed
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const ListView = props => {
 

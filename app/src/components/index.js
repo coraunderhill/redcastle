@@ -95,7 +95,7 @@ export const getThemeComponent = name => {
 /**
  * Main app component
  * @param {Object} props Component properties
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const App = props => {
 

@@ -8,7 +8,7 @@ import WatchView from './WatchView';
  * Video page component
  * @param {Object} props Component properties
  * @param {Object} props.data API response data
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const Watch = props => {
 

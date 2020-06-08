@@ -10,7 +10,7 @@ import { home } from 'Common/navigate';
  * @param {string} props.icon Item icon
  * @param {string} props.label Item label
  * @param {string} props.path = Link path
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 export const NavItem = props => {
 

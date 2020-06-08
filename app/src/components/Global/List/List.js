@@ -8,7 +8,7 @@ import ListView from './ListView';
  * Video list
  * @param {Object} props Component properties
  * @param {Object} props.data API response data
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const List = props => {
 

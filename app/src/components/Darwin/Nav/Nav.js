@@ -9,7 +9,7 @@ import navItems from 'Common/navItems';
 
 /**
  * macOS nav wrapper
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const Nav = () => {
 

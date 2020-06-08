@@ -11,7 +11,7 @@ import { getThemeComponent } from '../..'
  * Video page view
  * @param {Object} props Component properties
  * @param {Object} props.videoDetails Video details to be rendered
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const WatchView = props => {
 

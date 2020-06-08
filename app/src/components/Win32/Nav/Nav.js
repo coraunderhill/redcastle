@@ -9,11 +9,11 @@ import { home } from 'Common/navigate';
 import navItems from 'Common/navItems';
 
 // Import resources
-import 'Static/scss/platform/_win32-nav';
+import 'Static/scss/win32/_win32-nav';
 
 /**
  * Windows navigation component
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const Nav = () => {
 
@@ -35,7 +35,7 @@ const Nav = () => {
   /**
    * Renders navigation group headers
    * @param {Object} group Navigation group
-   * @returns {Object} React component
+   * @returns {JSX.Element} React component
    */
   const _onRenderGroupHeader = group => <h3>{group.name}</h3>;
 

@@ -7,13 +7,13 @@ import { initializeIcons } from '@uifabric/icons';
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/platform/_win32-fabric';
+import 'Static/scss/win32/_win32-fabric';
 
 /**
  * Windows app template
  * @param {Object} props Component properties
  * @param {Object} props.children Child components for rendering
- * @returns {Object} React component
+ * @returns {JSX.Element} React component
  */
 const Theme = props => {
 

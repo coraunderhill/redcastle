@@ -38,9 +38,7 @@ export const windowCfg = () => {
    */
   const cfg = {
     backgroundColor: bgColor,
-    frame: isMac,
     height: 600,
-    transparent: true,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -50,6 +48,7 @@ export const windowCfg = () => {
   // Set any Mac-specific properties
   if (isMac) {
     cfg.titleBarStyle = 'hidden';
+    cfg.transparent = true;
     cfg.vibrancy = 'sidebar';
   }
 

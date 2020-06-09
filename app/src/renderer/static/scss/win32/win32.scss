@@ -1,3 +1,7 @@
+@use 'dark';
+@use 'light';
+@use 'win32-nav';
+
 .ms-Fabric {
   display: flex;
   flex-direction: row;

@@ -5,7 +5,7 @@ import React from 'react';
 import { home } from 'Common/navigate';
 
 /**
- * macOS navigation group item
+ * macOS navigation group item component
  * @param {Object} props Component properties
  * @param {string} props.icon Item icon
  * @param {string} props.label Item label

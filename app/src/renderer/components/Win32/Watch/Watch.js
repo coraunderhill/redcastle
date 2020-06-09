@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from '@fluentui/react/lib/Text';
 
 /**
- *
+ * Windows video details component
  * @param {Object} props Component properties
  * @param {string} props.channel Channel name
  * @param {string} props.text Video detail text

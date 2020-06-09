@@ -8,7 +8,7 @@ import NavItem from './NavItem';
 import navItems from 'Common/navItems';
 
 /**
- * macOS nav wrapper
+ * macOS navigation component
  * @returns {JSX.Element} React component
  */
 const Nav = () => {

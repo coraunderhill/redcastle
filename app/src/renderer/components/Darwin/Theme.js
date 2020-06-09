@@ -6,10 +6,10 @@ import Header from './Header/Header';
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/photon/_photon.scss';
+import 'Static/scss/photon/photon.scss';
 
 /**
- * macOS app template
+ * macOS app component
  * @param {Object} props Component properties
  * @param {Object} props.children Child components to be rendered
  * @returns {Object} React component

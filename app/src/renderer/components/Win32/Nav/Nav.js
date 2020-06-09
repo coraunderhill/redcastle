@@ -8,9 +8,6 @@ import { home } from 'Common/navigate';
 // Import nav items
 import navItems from 'Common/navItems';
 
-// Import resources
-import 'Static/scss/win32/_win32-nav';
-
 /**
  * Windows navigation component
  * @returns {JSX.Element} React component

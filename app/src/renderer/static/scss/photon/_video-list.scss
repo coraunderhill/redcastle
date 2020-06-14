@@ -1,0 +1,12 @@
+.video-list-item {
+  display: flex;
+
+  & .video-list-item-details {
+    padding: 0.5rem;
+  }
+
+  & .video-list-item-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}

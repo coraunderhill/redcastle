@@ -5,7 +5,7 @@ import React from 'react';
 import Player from 'Components/Global/Player/Player';
 
 // Import theme component getter
-import { getThemeComponent } from '../..'
+import { getThemeComponent } from 'Components';
 
 /**
  * Video page view
@@ -15,7 +15,6 @@ import { getThemeComponent } from '../..'
  */
 const WatchView = props => {
 
-  // Deconstruct video details
   const {
     id,
     snippet,

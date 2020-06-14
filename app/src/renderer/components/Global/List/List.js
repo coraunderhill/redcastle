@@ -37,14 +37,17 @@ const List = props => {
     } = val.snippet;
 
     // Convert timestamp
-    const date = new Date(publishedAt).toDateString();
-    const time = new Date(publishedAt).toLocaleTimeString();
+    const date = new Date(publishedAt);
+    const time = date.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
     // Add the new video info to the array
     listItems.push({
       id: id,
       channel: channelTitle,
-      date: date,
+      date: date.toDateString(),
       thumb: thumbnails,
       time: time,
       title: title,

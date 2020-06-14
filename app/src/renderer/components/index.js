@@ -4,6 +4,7 @@ import React from 'react';
 
 // Import React components
 import Darwin from './Darwin/Theme';
+import ListMac from './Darwin/List/List';
 import { WatchDetails as WatchDetailsMac } from './Darwin/Watch/Watch';
 import Win32 from './Win32/Theme';
 import { WatchDetails as WatchDetailsWin } from './Win32/Watch/Watch';
@@ -68,6 +69,7 @@ export const getThemeComponent = name => {
    * @type {Object}
    */
   const DarwinExports = {
+    List: ListMac,
     WatchDetails: WatchDetailsMac,
   };
 

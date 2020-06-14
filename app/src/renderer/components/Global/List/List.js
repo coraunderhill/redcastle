@@ -1,8 +1,8 @@
 // Import Node modules
 import React from 'react';
 
-// Import List view
-import ListView from './ListView';
+// Import theme component getter
+import { getThemeComponent } from 'Components';
 
 /**
  * Video list
@@ -13,6 +13,12 @@ import ListView from './ListView';
 const List = props => {
 
   const { data } = props;
+
+  /**
+   * List component wrapper from theme
+   * @type {JSX.Element}
+   */
+  const ThemeList = getThemeComponent('List');
 
   /**
    * List items to be passed to the view
@@ -45,7 +51,7 @@ const List = props => {
     });
   }
 
-  return (<ListView items={listItems} />);
+  return <ThemeList items={listItems} />;
 
 }
 

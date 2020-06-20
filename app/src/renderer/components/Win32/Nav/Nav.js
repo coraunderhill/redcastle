@@ -3,10 +3,10 @@ import React from 'react';
 import { Nav as FluentNav } from '@fluentui/react/lib/Nav';
 
 // Import navigation module
-import { home } from 'Common/navigate';
+import { home } from '@common/navigate';
 
 // Import nav items
-import navItems from 'Common/navItems';
+import navItems from '@common/navItems';
 
 /**
  * Windows navigation component

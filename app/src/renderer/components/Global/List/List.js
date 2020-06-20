@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import theme component getter
-import { getThemeComponent } from 'Components';
+import { getThemeComponent } from '@components';
 
 /**
  * Video list

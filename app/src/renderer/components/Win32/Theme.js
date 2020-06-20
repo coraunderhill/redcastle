@@ -7,7 +7,7 @@ import { initializeIcons } from '@uifabric/icons';
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/fluent/fluent';
+import '@static/scss/fluent/fluent';
 
 /**
  * Windows app component

@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import navigation module
-import { home } from 'Common/navigate';
+import { home } from '@common/navigate';
 
 /**
  * macOS navigation group item component

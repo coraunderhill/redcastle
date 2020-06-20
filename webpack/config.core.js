@@ -23,9 +23,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Common: path.resolve(__dirname, '../app/src/renderer/common'),
-      Components: path.resolve(__dirname, '../app/src/renderer/components'),
-      Static: path.resolve(__dirname, '../app/src/renderer/static'),
+      '@common': path.resolve(__dirname, '../app/src/renderer/common'),
+      '@components': path.resolve(__dirname, '../app/src/renderer/components'),
+      '@static': path.resolve(__dirname, '../app/src/renderer/static'),
     },
     extensions: ['.js', '.json', '.scss', '.css'],
   },

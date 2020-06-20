@@ -5,7 +5,7 @@ import React from 'react';
 import NavItem from './NavItem';
 
 // Import nav items
-import navItems from 'Common/navItems';
+import navItems from '@common/navItems';
 
 /**
  * macOS navigation component

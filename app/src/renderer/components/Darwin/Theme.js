@@ -6,7 +6,7 @@ import Header from './Header/Header';
 import Nav from './Nav/Nav';
 
 // Import resources
-import 'Static/scss/photon/photon.scss';
+import '@static/scss/photon/photon.scss';
 
 /**
  * macOS app component

@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Import React components
-import App from 'Components/';
+import App from '@components/';
 
 /**
  * Update React view

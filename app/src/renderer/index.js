@@ -2,16 +2,16 @@
 import React from 'react';
 
 // Import React components
-import List from 'Components/Global/List/List';
+import List from '@components/Global/List/List';
 
 // Import theme init
-import { initTheme } from 'Components';
+import { initTheme } from '@components';
 
 // Import React renderer
-import updateView from 'Common/renderer';
+import updateView from '@common/renderer';
 
 // Import YouTube Data API client
-import { list } from 'Common/client';
+import { list } from '@common/client';
 
 /**
  * Initiates app

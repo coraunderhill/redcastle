@@ -1,6 +1,9 @@
 // Import Node modules
 import React from 'react';
 
+// Import navigation module
+import { watchVideo } from '@common/navigate';
+
 /**
  * macOS video list component wrapper
  * @param {Object} props Component properties
@@ -10,6 +13,12 @@ import React from 'react';
 const List = props => {
 
   const { items } = props;
+
+  const _gotoWatch = videoId => {
+
+    watchVideo(videoId);
+
+  }
 
   const newList = items.map(val => {
     const {
@@ -22,13 +31,13 @@ const List = props => {
     } = val;
 
     return (
-      <div className="video-list-item" key={id}>
-        <img
-          className="video-list-item-thumb"
-          src={thumb.default.url}
-        />
+      <div className="video-list-item"
+        key={id}
+        onClick={() => _gotoWatch(id)}
+      >
+        <img className="video-list-item-thumb" src={thumb.default.url} />
         <div className="video-list-item-details">
-          <span className="video-list-item-title">{title}</span>
+          <span className="video-list-item-title" children={title} />
           <br />
           <span className="video-list-item-info">
             {channel} – {date} at {time}
@@ -38,7 +47,7 @@ const List = props => {
     );
   });
 
-  return newList;
+  return <div className="video-list-group" children={newList} />;
 
 }
 

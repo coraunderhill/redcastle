@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 
 // Import Watch view

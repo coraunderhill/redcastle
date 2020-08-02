@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import { resolve } from 'path';
 import sl from 'server-lite';
 import { parse } from 'url';

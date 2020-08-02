@@ -1,40 +1,26 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 import { render } from 'react-dom';
-
-// Import React components
-import App from '@components/';
+import { getComponent } from '@common/theme';
 
 /**
  * Update React view
- * @param {Object} View React component to render with template
- * @param {string} stateURL URL to push to the history state
+ * @param {string} view Name of the component to render
+ * @param {string} data Data to include with the component
  */
-const updateView = (View, stateURL) => {
+const updateView = (view, data) => {
 
   // Check that both arguments have been passsed
-  if (View === undefined || stateURL === undefined || stateURL == '') {
+  if (view === undefined || data === undefined || view == '') {
     console.error('updateView requires two parameters')
   }
 
-  /**
-   * New history state object
-   * @type {Object}
-   */
-  const newState = {};
-
-  // Deconstruct history state
-  const { state } = history;
-
-
-  // Sets the state counter
-  newState.i = (state === null) ? 0 : state.i++;
-
-  // Update the history state
-  history.pushState(newState, '', stateURL);
+  // Get the appropriate theme component
+  const Theme = getComponent('Theme');
+  const View = getComponent(view);
 
   // Update the view
-  render(<App>{View}</App>, document.getElementById('root'));
+  render(<Theme><View data={data}></View></Theme>, document.getElementById('root'));
 
 }
 

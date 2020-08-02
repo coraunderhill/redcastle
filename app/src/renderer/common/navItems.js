@@ -1,5 +1,5 @@
 // Import menu from JSON file
-import menuItems from '@static/json/menu-nav.json';
+import menuItems from '@static/json/menu-nav';
 
 /**
  * Parses `menu-nav.json`
@@ -23,6 +23,7 @@ const navItems = () => {
       icon: val.icon,
       label: val.label,
       name: key,
+      path: val.path,
     };
 
     items.push(item);

@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       core.module.rules.js,
       { // Fonts
-        test: /\.(eot|svg|ttf|woff)/,
+        test: /\.(svg|woff)/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',

@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import { nativeTheme } from 'electron';
 import { platform } from 'os';
 
@@ -38,6 +38,8 @@ export const windowCfg = () => {
    */
   const cfg = {
     height: 600,
+    minHeight: 400,
+    minWidth: 600,
     webPreferences: {
       nodeIntegration: true,
     },

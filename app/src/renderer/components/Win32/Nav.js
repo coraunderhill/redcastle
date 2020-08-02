@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 import { Nav as FluentNav } from '@fluentui/react/lib/Nav';
 

@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import { BrowserWindow, app } from 'electron';
 import { windowCfg } from './platform';
 import { startServer } from './server';

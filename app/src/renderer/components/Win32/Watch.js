@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 import { Text } from '@fluentui/react/lib/Text';
 

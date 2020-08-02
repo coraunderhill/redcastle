@@ -1,8 +1,8 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 
 // Import site content
-import { siteTitle } from '@static/json/content-en.json';
+import { siteTitle } from '@static/json/content-en';
 
 /**
  * macOS header component

@@ -1,5 +1,5 @@
 // Import menu from JSON file
-import menuItems from '@static/json/menu-nav.json';
+import menuItems from '@static/json/menu-nav';
 
 /**
  * Parses `menu-nav.json`

@@ -730,9 +730,6 @@
    overflow: hidden;
    text-overflow: ellipsis;
  }
- .nav-group-item:active, .nav-group-item.active {
-   background-color: #dcdfe1;
- }
  .nav-group-item .icon {
    width: 19px;
    height: 18px;

@@ -38,6 +38,8 @@ export const windowCfg = () => {
    */
   const cfg = {
     height: 600,
+    minHeight: 400,
+    minWidth: 600,
     webPreferences: {
       nodeIntegration: true,
     },

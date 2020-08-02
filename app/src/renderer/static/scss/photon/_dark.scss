@@ -1,12 +1,14 @@
+@use 'variables' as var;
+
 @media (prefers-color-scheme: dark) {
 
   body {
-    color: #dededf;
+    color: var.$dark-bg;
   }
 
   .pane {
-    border-left: 1px solid #050505;
-    background-color: #292a2b;
+    border-left: 1px solid var.$dark-border-clr;
+    background-color: var.$dark-pane-bg;
   }
 
   .nav-group {
@@ -14,30 +16,30 @@
     & .nav-group-item {
       color: #fff;
 
-      & .icon {
-        color: #999a9b;
+      &:active, &.active {
+        background-color: rgba(255, 255, 255, 0.2);
       }
-    }
 
-    & .nav-group-title {
-      color: #b2b3b4;
+      & .icon {
+        color: var.$dark-icon-clr;
+      }
     }
 
   }
 
   .title {
-    color: #c4c5c6;
+    color: var.$dark-toolbar-clr;
   }
 
   .toolbar {
-    background-color: #4a4b4c;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a4b4c), color-stop(100%, #3a3a3b));
-    background-image: -webkit-linear-gradient(top, #4a4b4c 0%, #3a3a3b 100%);
-    background-image: linear-gradient(to bottom, #4a4b4c 0%, #3a3a3b 100%);
+    background-color: var.$dark-toolbar-bg;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var.$dark-toolbar-bg), color-stop(100%, var.$dark-toolbar-bg-gdnt));
+    background-image: -webkit-linear-gradient(top, var.$dark-toolbar-bg 0%, var.$dark-toolbar-bg-gdnt 100%);
+    background-image: linear-gradient(to bottom, var.$dark-toolbar-bg 0%, var.$dark-toolbar-bg-gdnt 100%);
   }
 
   .toolbar-header {
-    border-bottom: 1px solid #050505;
+    border-bottom: 1px solid var.$dark-border-clr;
   }
 
   .window {

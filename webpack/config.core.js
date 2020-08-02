@@ -23,9 +23,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Common: path.resolve(__dirname, '../app/src/renderer/common'),
-      Components: path.resolve(__dirname, '../app/src/renderer/components'),
-      Static: path.resolve(__dirname, '../app/src/renderer/static'),
+      '@common': path.resolve(__dirname, '../app/src/renderer/common'),
+      '@components': path.resolve(__dirname, '../app/src/renderer/components/Global'),
+      '@darwin': path.resolve(__dirname, '../app/src/renderer/components/Darwin'),
+      '@static': path.resolve(__dirname, '../app/src/renderer/static'),
+      '@win32': path.resolve(__dirname, '../app/src/renderer/components/Win32'),
     },
     extensions: ['.js', '.json', '.scss', '.css'],
   },

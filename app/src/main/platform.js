@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import { nativeTheme } from 'electron';
 import { platform } from 'os';
 

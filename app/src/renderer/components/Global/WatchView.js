@@ -1,11 +1,11 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 
-// Import React components
-import Player from 'Components/Global/Player/Player';
+// Import components
+import Player from '@components/Global/Player/Player';
 
 // Import theme component getter
-import { getThemeComponent } from 'Components';
+import { getThemeComponent } from '@components';
 
 /**
  * Video page view

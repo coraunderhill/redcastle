@@ -1,12 +1,12 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 
-// Import React components
-import Header from './Header/Header';
-import Nav from './Nav/Nav';
+// Import components
+import Header from '@darwin/Header';
+import Nav from '@darwin/Nav';
 
 // Import resources
-import 'Static/scss/photon/photon.scss';
+import '@static/scss/photon/main';
 
 /**
  * macOS app component

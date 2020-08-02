@@ -1,4 +1,4 @@
-// Import Node modules
+// Import modules
 import { google } from 'googleapis';
 
 // Initialize YouTube Data API

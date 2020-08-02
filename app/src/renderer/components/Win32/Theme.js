@@ -1,13 +1,13 @@
-// Import Node modules
+// Import modules
 import React from 'react';
 import { Fabric } from '@fluentui/react/lib/Fabric';
 import { initializeIcons } from '@uifabric/icons';
 
-// Import React components
-import Nav from './Nav/Nav';
+// Import components
+import Nav from './Nav';
 
 // Import resources
-import 'Static/scss/win32/win32';
+import '@static/scss/win32/main';
 
 /**
  * Windows app component

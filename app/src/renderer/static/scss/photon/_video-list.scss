@@ -1,12 +1,26 @@
-.video-list-item {
+.video-list-group {
+  align-content: flex-start;
+  align-items: flex-start;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-  & .video-list-item-details {
-    padding: 0.5rem;
-  }
+.video-list-item {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
 
   & .video-list-item-title {
     font-size: 0.95rem;
     font-weight: 500;
+  }
+
+  & .video-list-item-info,
+  & .video-list-item-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

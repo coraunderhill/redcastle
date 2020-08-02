@@ -1,15 +1,7 @@
-// Import Node modules
-import React from 'react';
-
-// Import React components
-import List from 'Components/Global/List/List';
-import Watch from 'Components/Global/Watch/Watch';
-
-// Import React renderer
-import updateView from './renderer';
-
-// Import API client
-import { list } from './client';
+// Import modules
+import { list } from '@common/client';
+import { pushState } from '@common/history';
+import updateView from '@common/renderer';
 
 /**
  * Render the List component with popular videos
@@ -27,16 +19,17 @@ export const home = () => {
   };
 
   // Call API and update view
-  list(params).then(res => (
-    updateView(<List data={res.data} />, '/')
-  ));
+  list(params).then(res => {
+    pushState('/');
+    updateView('List', res.data);
+  });
 }
 
 /**
  * Render the Watch component with a selected video
  * @param {string} videoID ID of the video to display
  */
-export const watchVideo = videoID => {
+export const watch = videoID => {
 
   /**
    * Sets the API parameters
@@ -55,17 +48,8 @@ export const watchVideo = videoID => {
      */
     const item = res.data.items.shift();
 
-    // Deconstruct the video ID for the history URL
-    const { id } = item;
-
-    /**
-     * URL for using in the history object
-     * @type {string}
-     * @default
-     */
-    const url = `/watch?v=${id}`;
-
-    updateView(<Watch data={item} />, url);
+    pushState(`/watch?v=${videoID}`);
+    updateView('Watch', item);
   });
 
 }

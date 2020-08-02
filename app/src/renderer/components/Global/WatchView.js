@@ -1,11 +1,7 @@
 // Import modules
 import React from 'react';
 
-<<<<<<< refs/remotes/origin/master:app/src/renderer/components/Global/Watch/WatchView.js
-// Import React components
-=======
 // Import components
->>>>>>> Updated Webpack alias names:app/src/renderer/components/Global/WatchView.js
 import Player from '@components/Global/Player/Player';
 
 // Import theme component getter

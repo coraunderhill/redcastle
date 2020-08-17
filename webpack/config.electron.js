@@ -1,6 +1,3 @@
-// Import modules
-const path = require('path');
-
 // Import core configuration values
 const core = require('./config.core.js');
 

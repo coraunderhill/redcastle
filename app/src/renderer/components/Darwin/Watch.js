@@ -1,6 +1,12 @@
 // Import modules
 import React from 'react';
 
+// Import components
+import Player from '@components/Player';
+
+// Import modules
+import { parseDate, parseTime } from '@common/helpers';
+
 /**
  * macOS video player component
  * @param {Object} props Component properties
@@ -18,11 +24,35 @@ const Watch = props => {
   }
 
   // Deconstruct video data
-  const { snippet, statistics } = data;
+  const { id } = data;
+  const {
+    channelTitle,
+    description,
+    publishedAt,
+    title,
+  } = data.snippet;
 
-  //
+  /**
+   * @type {Date}
+   */
+  const date = new Date(publishedAt);
 
-  return null;
+  /**
+   * @type {string}
+   */
+  const postedAt = parseTime(date);
+
+  /**
+   * @type {string}
+   */
+  const postedOn = parseDate(date);
+
+  return (
+    <div className="watch-container">
+      <Player videoID={id} />
+      <WatchDetails channel={channelTitle} text={description} title={title} />
+    </div>
+  );
 
 };
 

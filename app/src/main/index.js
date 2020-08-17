@@ -20,3 +20,12 @@ app.on('ready', () => {
   .loadURL('http://127.0.0.1:18451/');
 
 });
+
+app.on('web-contents-created', (e, contents) => {
+
+  // Prevent _blank from creating new windows
+  contents.on('new-window', (e, url) => {
+    e.preventDefault();
+  });
+
+});

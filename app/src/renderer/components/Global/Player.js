@@ -24,6 +24,7 @@ const Player = props => {
    */
   const params = {
     playerVars: {
+      autoplay: true,
       enablejsapi: 1,
       modestbranding: 1,
     },

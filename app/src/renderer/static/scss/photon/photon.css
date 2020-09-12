@@ -138,7 +138,6 @@
    padding: 0;
    margin: 0;
    font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
-   font-size: 13px;
    line-height: 1.6;
    background-color: transparent;
  }
@@ -686,7 +685,7 @@
 
  .list-group-item {
    padding: 10px;
-   font-size: 12px;
+   font-size: 0.75rem;
    color: #414142;
    border-top: 1px solid #ddd;
  }
@@ -719,7 +718,7 @@
  }
 
  .nav-group {
-   font-size: 14px;
+   font-size: 0.875rem;
  }
 
  .nav-group-item {
@@ -736,14 +735,14 @@
    float: left;
    margin-top: -3px;
    margin-right: 7px;
-   font-size: 18px;
+   font-size: 1.125rem;
    text-align: center;
  }
 
  .nav-group-title {
    margin: 0;
    padding: 10px 10px 2px;
-   font-size: 12px;
+   font-size: 0.75rem;
    font-weight: 500;
  }
 
@@ -2193,7 +2192,7 @@
    width: 100%;
    border: 0;
    border-collapse: separate;
-   font-size: 12px;
+   font-size: 0.75rem;
    text-align: left;
  }
 
@@ -2249,7 +2248,7 @@
    position: relative;
    flex: 1;
    padding: 3px;
-   font-size: 12px;
+   font-size: 0.75rem;
    text-align: center;
    border-left: 1px solid #989698;
    background-color: #b8b6b8;
@@ -2272,7 +2271,7 @@
    left: 5px;
    width: 15px;
    height: 15px;
-   font-size: 15px;
+   font-size: 0.9375rem;
    line-height: 15px;
    text-align: center;
    color: #666;

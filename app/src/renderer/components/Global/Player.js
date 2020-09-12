@@ -13,12 +13,6 @@ const Player = props => {
   const { videoID } = props;
 
   /**
-   * Prevents immediate video playback after onReady
-   * @param {Object} event onReady event for player
-   */
-  const _OnReady = event => event.target.pauseVideo();
-
-  /**
    * Player API parameters
    * @type {Object}
    */
@@ -30,7 +24,7 @@ const Player = props => {
     },
   };
 
-  return <YouTube onReady={_OnReady} opts={params} videoId={videoID} />;
+  return <YouTube opts={params} videoId={videoID} />;
 
 }
 

@@ -24,6 +24,20 @@ const Watch = props => {
 
   return null;
 
+  /**
+   * @type {string}
+   */
+  const postedOn = parseDate(date);
+
+  return (
+    <div>
+      <Player videoID={id} />
+      <div className="watch-container">
+        <WatchDetails channel={channelTitle} text={description} title={title} />
+      </div>
+    </div>
+  );
+
 };
 
 /**

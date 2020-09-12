@@ -1,9 +1,10 @@
 // Import modules
 import React from 'react';
+import { parseDate, parseTime } from '@common/helpers';
 import { watch } from '@common/navigate';
 
 /**
- * macOS video list component wrapper
+ * macOS video list component
  * @param {Object} props Component properties
  * @param {Array} props.data API response data
  * @returns {JSX.Element|boolean} React component or false on error
@@ -28,11 +29,8 @@ const List = props => {
     } = val.snippet;
 
     // Convert timestamp
-    const date = new Date(publishedAt);
-    const time = date.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    const date = parseDate(publishedAt);
+    const time = parseTime(publishedAt);
     const timestamp = `${date} – ${time}`;
 
     return (
@@ -43,7 +41,7 @@ const List = props => {
       >
         <img
           className="video-list-item-thumbnails"
-          src={thumbnails.medium.url}
+          src={thumbnails.high.url}
           title={title}
         />
         <div className="video-list-item-details">

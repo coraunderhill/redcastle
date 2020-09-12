@@ -78,7 +78,7 @@ module.exports = {
   plugins: [
     new DotEnvPlugin(),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       template: 'src/renderer/static/ejs/template.ejs',
     }),
     new MiniCssExtractPlugin({

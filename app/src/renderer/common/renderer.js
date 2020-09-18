@@ -1,7 +1,7 @@
 // Import modules
 import React from 'react';
 import { render } from 'react-dom';
-import { getComponent } from '@common/theme';
+import * as Components from '@components/';
 
 /**
  * Update React view
@@ -16,8 +16,8 @@ const updateView = (view, data) => {
   }
 
   // Get the appropriate theme component
-  const Theme = getComponent('Theme');
-  const View = getComponent(view);
+  const Theme = Components.Theme;
+  const View = Components[view];
 
   // Update the view
   render(<Theme><View data={data}></View></Theme>, document.getElementById('root'));

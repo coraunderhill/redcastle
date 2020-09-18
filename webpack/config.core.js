@@ -24,11 +24,9 @@ module.exports = {
   resolve: {
     alias: {
       '@common': path.resolve(__dirname, '../app/src/renderer/common'),
-      '@components': path.resolve(__dirname, '../app/src/renderer/components/Global'),
-      '@darwin': path.resolve(__dirname, '../app/src/renderer/components/Darwin'),
+      '@components': path.resolve(__dirname, '../app/src/renderer/components/'),
       '@static': path.resolve(__dirname, '../app/src/renderer/static'),
-      '@win32': path.resolve(__dirname, '../app/src/renderer/components/Win32'),
     },
-    extensions: ['.js', '.json', '.scss', '.css'],
+    extensions: ['.js', '.json', '.scss'],
   },
 };

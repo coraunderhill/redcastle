@@ -12,8 +12,6 @@ module.exports = {
   context: core.context,
   entry: {
     main: core.entry,
-    styles: './src/renderer/static/scss/main.scss',
-    photon: './src/renderer/static/scss/photon/photon.css',
   },
   module: {
     rules: [
@@ -59,12 +57,6 @@ module.exports = {
         styles: {
           name: 'styles',
           test: '/\.scss/',
-          chunks: 'all',
-          enforce: true,
-        },
-        photon: {
-          name: 'photon',
-          test: /_photon\.css$/,
           chunks: 'all',
           enforce: true,
         },

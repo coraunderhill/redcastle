@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Import components
-import Header from '@darwin/Header';
-import Nav from '@darwin/Nav';
+import Header from './Header';
+import Nav from './Nav';
 
 // Import resources
 import '@static/scss/photon/main';

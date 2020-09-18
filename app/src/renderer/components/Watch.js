@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import components
-import Player from '@components/Player';
+import Player from './Player';
 
 // Import modules
 import { parseDate, parseTime } from '@common/helpers';

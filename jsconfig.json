@@ -4,10 +4,8 @@
     "baseUrl": "./app",
     "paths": {
       "@common/*": ["src/renderer/common/*"],
-      "@components/*": ["src/renderer/components/Global/*"],
-      "@darwin/*": ["src/renderer/components/Darwin/*"],
+      "@components/*": ["src/renderer/components/*"],
       "@static/*": ["src/renderer/static/*"],
-      "@win32/*": ["src/renderer/components/Win32/*"]
     },
     "target": "es2017"
   },

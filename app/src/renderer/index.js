@@ -1,5 +1,6 @@
-// Import navigation module
-import { home } from '@common/navigate';
+import 'normalize.css';
+import 'remixicon/fonts/remixicon.css';
+import goTo from '@common/navigate';
 
 // Start the app
-home();
+goTo('/');

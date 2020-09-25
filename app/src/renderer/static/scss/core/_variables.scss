@@ -1,0 +1,52 @@
+/**
+ * Colors
+ */
+$grey-dark: hsl(0, 0, 20);
+$grey-ultralight: hsl(0, 0, 85);
+
+/**
+ * Body components
+ */
+ $body-bgcolor: $grey-ultralight;
+ $dark-body-bgcolor: $grey-dark;
+ $body-color: $grey-dark;
+ $dark-body-color: $grey-ultralight;
+
+/**
+ * Grid components
+ */
+$grid-item-info: 0.85rem;
+$grid-item-margin:0.5rem;
+$grid-item-title: 1.25rem;
+$grid-item-w: 400px;
+
+/**
+ * Header components
+ */
+$header-weight: 500;
+$subheader-weight: 300;
+
+/**
+ * Media queries
+ */
+$media-queries: (
+  'sm': 'only screen and (max-width: 700px)',
+  'dark': '(prefers-color-scheme: dark)',
+);
+
+/**
+ * Shadows and lighting
+ */
+$drop-shadow: 0 1px 3px hsla(0,0,0,0.12), 0 1px 2px hsla(0,0,0,0.24);;
+$drop-shadow-hov: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+/**
+ * Transitions
+ */
+$transition-smooth: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+/**
+ * Toolbar components
+ */
+$toolbar-bgcolor: hsla(0, 0, 0, 0.65);
+$toolbar-h: 4rem;

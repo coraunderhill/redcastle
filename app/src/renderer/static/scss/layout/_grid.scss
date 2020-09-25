@@ -1,0 +1,63 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+.grid {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.grid-item {
+  box-shadow: $drop-shadow;
+  margin: $grid-item-margin;
+  max-width: $grid-item-w;
+  transition: $transition-smooth;
+  width: 100%;
+
+  @include add-breakpoint('sm') {
+    margin: $grid-item-margin 0;
+  }
+
+  &:hover {
+    box-shadow: $drop-shadow-hov;
+  }
+}
+
+.grid-item-content {
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  color: hsl(0, 0, 15);
+  padding: 0.5rem;
+
+  & > span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  & .grid-item-info {
+    font-size: $grid-item-info;
+    font-style: italic;
+    font-weight: $subheader-weight;
+    margin-top: 0.25rem;
+  }
+
+  & .grid-item-title {
+    font-size: $grid-item-title;
+    font-weight: $header-weight;
+  }
+}
+
+.grid-item-thumb {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px 4px 0 0;
+  display: block;
+
+  @include aspect-ratio(16, 9);
+}

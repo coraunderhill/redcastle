@@ -1,0 +1,13 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+#toolbar {
+  background-color: $toolbar-bgcolor;
+  height: $toolbar-h;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}

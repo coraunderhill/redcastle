@@ -1,0 +1,28 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+#root, body {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#container {
+  margin-top: $toolbar-h;
+}
+
+body {
+  // background-color: $body-bgcolor;
+  color: $body-color;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+
+  @include dark {
+    // background-color: $dark-body-bgcolor;
+    color: $dark-body-color;
+  }
+}

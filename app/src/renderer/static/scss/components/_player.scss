@@ -1,0 +1,12 @@
+iframe[title^="YouTube"]::before {
+  content: '';
+  float: left;
+  height: 50vh;
+  padding-bottom: 25%;
+}
+
+iframe[title^="YouTube"]::after {
+  clear: left;
+  content: ' ';
+  display: table;
+}

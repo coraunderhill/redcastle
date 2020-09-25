@@ -1,0 +1,51 @@
+@use 'variables' as var;
+
+/// Adds rules for specified breakpoints from the media-queries map
+/// @access public
+/// @param {String} $breakpoints
+/// @return {String} Media query breakpoints and rules
+/// @content Breakpoint rules
+@mixin add-breakpoint($breakpoints...) {
+  $conditions: ();
+
+  /**
+   * Iterate over arguments and add them to conditions list
+   */
+  @each $breakpoint in $breakpoints {
+    $conditions: append(
+      $conditions,
+      map-get(var.$media-queries, $breakpoint),
+      comma
+    );
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
+
+/// Adds rules for maintaining the requested aspect ratio
+/// @access public
+/// @param {Number} $width
+/// @param {Number} $height
+/// @return {String} Aspect rules
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+}
+
+/// Adds rules for dark mode support
+/// @access public
+/// @return {String} Media query and rules
+/// @content Dark mode rules
+@mixin dark() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

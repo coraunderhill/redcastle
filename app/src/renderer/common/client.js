@@ -1,8 +1,9 @@
-// Import modules
-import { google } from 'googleapis';
+import { youtube } from 'googleapis/build/src/apis/youtube/';
 
-// Initialize YouTube Data API
-const youtube = google.youtube({
+/**
+ * Initializes the YouTube Data API
+ */
+const client = youtube({
   auth: process.env.TESTING_KEY,
   version: 'v3',
 });
@@ -10,10 +11,8 @@ const youtube = google.youtube({
 /**
  * Query the API for a list of videos
  * @param {Object} params API request parameters
- * @param {string} params.part Comma-separated list of resource properties
- * @param {string} params.filter Set the data type to be requested (`chart`, `id`, or `myRating`)
  * @returns {Promise} Asyncronous API call
  */
 export const list = async params => (
-  await youtube.videos.list(params)
+  await client.videos.list(params)
 );

@@ -1,4 +1,7 @@
-// Import modules
+/**
+ * @module main/server
+ */
+
 import { resolve } from 'path';
 import sl from 'server-lite';
 import { parse } from 'url';
@@ -10,6 +13,7 @@ export const startServer = () => {
 
   /**
    * Server utility functions
+   * @type {slUtils}
    */
   const utils = new sl.utils();
 
@@ -22,6 +26,7 @@ export const startServer = () => {
 
   /**
    * Server request handler
+   * @type {slHandler}
    */
   const handler = new sl.handler(utils, build, '/index.html');
 
@@ -61,6 +66,7 @@ export const startServer = () => {
 
   /**
    * Sets the server configuration
+   * @type {slConfig}
    */
   const config = new sl.config({
     onRequest: onRequest,
@@ -69,6 +75,7 @@ export const startServer = () => {
 
   /**
    * Creates the server object
+   * @type {slServer}
    */
   const server = new sl.server.http(config);
 

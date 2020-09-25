@@ -1,48 +1,5 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-.window {
-  display: block;
-  height: inherit;
-
-  & .window-content {
-    height: 100%;
-  }
-}
-
-#root {
-  height: 100vh;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-iframe[title^="YouTube"]::before {
-  content: "";
-  float: left;
-  height: 50vh;
-  padding-bottom: 25%;
-}
-
-iframe[title^="YouTube"]::after {
-  clear: left;
-  content: " ";
-  display: table;
-}
-
-img {
-  display: block;
-  width: 100%;
-}
+@use 'components';
+@use 'core';
+@use 'layout';

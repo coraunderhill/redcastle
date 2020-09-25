@@ -1,13 +1,13 @@
-// Export all Darwin theme components
-import Header from './Header';
-import List from './List';
-import Nav from './Nav';
+// Export all components for dynamic reference later
+import Header from './Toolbar';
+import Grid from './Grid';
+import Nav from './Nav/index';
 import Theme from './Theme';
 import Watch from './Watch';
 
 export default {
   Header,
-  List,
+  Grid,
   Nav,
   Theme,
   Watch,

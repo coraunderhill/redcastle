@@ -1,37 +1,23 @@
-// Import modules
 import React from 'react';
 
-// Import components
-import Header from './Header';
-import Nav from './Nav';
-
-// Import resources
-import '@static/scss/photon/main';
+import Toolbar from './Toolbar';
 
 /**
- * macOS app component
+ * Theme component
  * @param {Object} props Component properties
- * @param {Object} props.children Child components to be rendered
- * @returns {Object} React component
+ * @param {JSX.Element[]} props.children Child components to be rendered
+ * @returns {JSX.Element} React component
  */
-const Theme = props => (
-  <div className="window">
+const Theme = props => {
 
-    <Header />
-
-    <div className="window-content">
-      <div className="pane-group">
-        <div className="pane-sm sidebar">
-          <Nav />
-        </div>
-
-        <div className="pane">
-          {props.children}
-        </div>
+  return (
+    <>
+      <Toolbar />
+      <div id="container">
+        {props.children}
       </div>
-    </div>
-
-  </div>
-);
+    </>
+  );
+};
 
 export default Theme;

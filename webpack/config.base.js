@@ -1,7 +1,10 @@
+const { resolve } = require('path');
+
 // Import Webpack plugins
-const DotEnvPlugin = require('dotenv-webpack');
+const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const DotEnv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtract = require('mini-css-extract-plugin');
 
 // Import core configuration values
 const core = require('./config.core.js');
@@ -12,12 +15,13 @@ module.exports = {
   context: core.context,
   entry: {
     main: core.entry,
+    styles: resolve(__dirname, '../app/src/renderer/static/scss/main.scss'),
   },
   module: {
     rules: [
       core.module.rules.js,
       { // Fonts
-        test: /\.(svg|woff)/,
+        test: /\.(eot|svg|ttf|woff|woff2)/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -28,7 +32,7 @@ module.exports = {
         test: /\.(c|sc)ss/,
         loader: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtract.loader,
             options: {
               publicPath: '/',
             },
@@ -68,12 +72,13 @@ module.exports = {
     path: core.output.path,
   },
   plugins: [
-    new DotEnvPlugin(),
+    new BundleAnalyzer(),
+    new DotEnv(),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'src/renderer/static/ejs/template.ejs',
     }),
-    new MiniCssExtractPlugin({
+    new MiniCssExtract({
       filename: 'res/[name].css',
     }),
   ],

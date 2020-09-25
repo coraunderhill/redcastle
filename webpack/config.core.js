@@ -1,9 +1,10 @@
-// Import modules
-const path = require('path');
+const { resolve } = require('path');
+
+// Import Webpack plugins
 
 // Set core configuration values to be referenced
 module.exports = {
-  context: path.resolve(__dirname, '../app'),
+  context: resolve(__dirname, '../app'),
   entry: './src/renderer',
   module: {
     rules: {
@@ -19,13 +20,15 @@ module.exports = {
     },
   },
   output: {
-    path: path.resolve(__dirname, '../app/build'),
+    path: resolve(__dirname, '../app/build'),
   },
+  plugins: [
+  ],
   resolve: {
     alias: {
-      '@common': path.resolve(__dirname, '../app/src/renderer/common'),
-      '@components': path.resolve(__dirname, '../app/src/renderer/components/'),
-      '@static': path.resolve(__dirname, '../app/src/renderer/static'),
+      '@common': resolve(__dirname, '../app/src/renderer/common'),
+      '@components': resolve(__dirname, '../app/src/renderer/components/'),
+      '@static': resolve(__dirname, '../app/src/renderer/static'),
     },
     extensions: ['.js', '.json', '.scss'],
   },

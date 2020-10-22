@@ -2,7 +2,7 @@
  * Adds the passed string to the history state object
  * @param {string} url URL to add to history state
  */
-export const pushState = url => {
+export const pushState = async url => {
 
   /**
    * New history state object

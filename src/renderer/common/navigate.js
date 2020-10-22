@@ -20,7 +20,7 @@ const root = document.getElementById('root');
  * @param {string} location URL path to load
  * @returns {boolean} Result
  */
-const goTo = location => {
+const goTo = async location => {
 
   /**
    * @type {string[]}
@@ -34,8 +34,7 @@ const goTo = location => {
 
   // Make sure the page exists first
   if (!(path in pages)) {
-    console.error(`Requested path not found: ${path}`);
-    return false;
+    throw new Error(`Requested path not found: ${path}`);
   }
 
   /**
@@ -43,18 +42,15 @@ const goTo = location => {
    */
   const queries = (parts.length > 1) ? parseQueryString(parts[1]) : null;
 
-  if (path === '/') grid();
-  if (path === '/trending') grid();
-  if (path === '/watch') watch(queries.v);
-
-  return true;
+  if (path === '/' || path === '/trending') return grid();
+  if (path === '/watch') return watch(queries.v);
 
 }
 
 /**
  * Render a grid of video results
  */
-const grid = () => {
+const grid = async () => {
 
   /**
    * Sets the API parameters
@@ -68,17 +64,16 @@ const grid = () => {
   };
 
   // Call API and update view
-  list(params).then(res => {
-    pushState('/');
-    render(<Theme><Grid data={res.data} /></Theme>, root);
-  });
+  const results = await list(params)
+  pushState('/');
+  return render(<Theme><Grid data={results.data} /></Theme>, root);
 }
 
 /**
  * Render the Watch component with a selected video
  * @param {string} videoID ID of the video to display
  */
-const watch = videoID => {
+const watch = async videoID => {
 
   /**
    * Sets the API parameters
@@ -90,17 +85,16 @@ const watch = videoID => {
   };
 
   // Call API and update view
-  list(params).then(res => {
-    /**
-     * youtube#video API response object
-     * @type {Object}
-     */
-    const item = res.data.items.shift();
+  let results = await list(params);
 
-    pushState(`/watch?v=${videoID}`);
-    render(<Theme><Watch video={item} /></Theme>, root);
-  });
+  /**
+   * youtube#video API response object
+   * @type {Object}
+   */
+  const item = results.data.items.shift();
 
+  pushState(`/watch?v=${videoID}`);
+  return render(<Theme><Watch video={item} /></Theme>, root);
 }
 
 export default goTo;

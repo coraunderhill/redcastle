@@ -29,7 +29,7 @@
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   color: hsl(0, 0, 15);
-  padding: 0.5rem;
+  padding: 0.5em;
 
   & > span {
     display: block;
@@ -43,7 +43,7 @@
     font-size: $grid-item-info;
     font-style: italic;
     font-weight: $subheader-weight;
-    margin-top: 0.25rem;
+    margin-top: 0.25em;
   }
 
   & .grid-item-title {

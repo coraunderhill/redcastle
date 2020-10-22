@@ -1,5 +1,6 @@
 # Directories
-app/build/**
+app/**
+build/**
 node_modules
 
 # Files

@@ -1,16 +1,14 @@
 const { resolve } = require('path');
 
-// Import Webpack plugins
-
 // Set core configuration values to be referenced
 module.exports = {
-  context: resolve(__dirname, '../app'),
-  entry: './src/renderer',
+  context: resolve(__dirname, '../'),
+  entry: resolve(__dirname, '../src/renderer/index.js'),
   module: {
     rules: {
       js: { // JavaScript
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [ resolve(__dirname, '../node_modules') ],
         loader: 'babel-loader',
         options: {
           plugins: ['@babel/plugin-transform-runtime'],
@@ -20,15 +18,13 @@ module.exports = {
     },
   },
   output: {
-    path: resolve(__dirname, '../app/build'),
+    path: resolve(__dirname, '../build'),
   },
-  plugins: [
-  ],
   resolve: {
     alias: {
-      '@common': resolve(__dirname, '../app/src/renderer/common'),
-      '@components': resolve(__dirname, '../app/src/renderer/components/'),
-      '@static': resolve(__dirname, '../app/src/renderer/static'),
+      '@common': resolve(__dirname, '../src/renderer/common'),
+      '@components': resolve(__dirname, '../src/renderer/components/'),
+      '@static': resolve(__dirname, '../src/renderer/static'),
     },
     extensions: ['.js', '.json', '.scss'],
   },

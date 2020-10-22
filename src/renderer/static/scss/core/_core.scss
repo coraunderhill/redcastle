@@ -19,7 +19,7 @@ body {
   // background-color: $body-bgcolor;
   color: $body-color;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: $body-font-size;
 
   @include dark {
     // background-color: $dark-body-bgcolor;

@@ -12,55 +12,51 @@ const Grid = props => {
 
   const { data } = props;
 
-  // Make sure we have the correct API response
-  if (!data.kind || data.kind !== 'youtube#videoListResponse') {
-    console.error('videoListResponse expected from API in Grid component');
-    return false;
-  }
-
   /**
    * @type {JSX.Element[]}
    */
-  const gridItems = data.items.map(val => {
-    const { id } = val;
-    const {
-      channelTitle,
-      publishedAt,
-      thumbnails,
-      title,
-    } = val.snippet;
+  const gridItems = data.items.map(val =>
+    <GridItem data={val} key={val.id} />
+  );
 
-    // Convert timestamps
-    const date = parseDate(publishedAt);
-    const time = parseTime(publishedAt);
-    const timestamp = `${time} on ${date}`;
+  return <div className="grid">{gridItems}</div>;
 
-    return (
-      <div
-        className="grid-item"
-        key={id}
-        onClick={() => goTo(`/watch?v=${id}`)}
-      >
-        <div className="grid-item-thumb" style={{
-          backgroundImage: `url(${thumbnails.high.url.toString()})`,
-        }} />
-        <div className="grid-item-content">
-          <span
-            className="grid-item-title"
-            children={title}
-            title={title}
-          />
-          <span className="grid-item-info">
-            By {channelTitle} @ {timestamp}
-          </span>
-        </div>
+}
+
+const GridItem = props => {
+
+  const { id } = props.data;
+  const {
+    channelTitle,
+    publishedAt,
+    thumbnails,
+    title,
+  } = props.data.snippet;
+
+  // Convert timestamps
+  const date = parseDate(publishedAt);
+  const time = parseTime(publishedAt);
+  const timestamp = `${time} on ${date}`;
+
+  return (
+    <div className="grid-item"
+      // key={id}
+      onClick={() => goTo(`/watch?v=${id}`)}
+    >
+      <div className="grid-item-thumb" style={{
+        backgroundImage: `url(${thumbnails.high.url.toString()})`,
+      }} />
+      <div className="grid-item-content">
+        <span className="grid-item-title"
+          children={title}
+          title={title}
+        />
+        <span className="grid-item-info">
+          {channelTitle} – {timestamp}
+        </span>
       </div>
-    );
-
-  });
-
-  return <div className="grid" children={gridItems} />;
-
+    </div>
+  );
 }
 
 export default Grid;

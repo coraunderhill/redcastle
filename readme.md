@@ -15,7 +15,7 @@ The current list of major technologies used to develop Redcastle are as such:
 - [React](https://reactjs.org) as our overall UI framework
 - [react-youtube](https://www.npmjs.com/package/react-youtube) for easy
 [IFrame](https://developers.google.com/youtube/iframe_api_reference) API integration
-- [server-lite](https://github.com/MaddHacker/server-lite) for loading app from a local server environment
+- [Remixicon](https://remixicon.com) icon pack
 - [Webpack](https://webpack.js.org/) for bundling and transpiling
 
 ## Does Redcastle have a development timeline

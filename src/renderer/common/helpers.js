@@ -3,16 +3,7 @@
  * @param {string} date Date string
  * @returns {string} Localized date
  */
-export const parseDate = date => {
-
-  /**
-   * @type {Date}
-   */
-  const d = new Date(date)
-
-  return d.toLocaleDateString();
-
-}
+export const parseDate = date => new Date(date).toLocaleDateString();
 
 /**
  * Parses a query string into an a new object
@@ -46,16 +37,7 @@ export const parseQueryString = queryString => {
  * @param {string} date Date string
  * @returns {string} Localized time
  */
-export const parseTime = date => {
-
-  /**
-   * @type {Date}
-   */
-  const d = new Date(date);
-
-  return d.toLocaleTimeString([], {
-    hour: 'numeric',
-    minute: '2-digit',
-  });
-
-};
+export const parseTime = date => new Date(date).toLocaleTimeString([], {
+  hour: 'numeric',
+  minute: '2-digit',
+});

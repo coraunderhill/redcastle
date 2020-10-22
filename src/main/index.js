@@ -3,11 +3,8 @@
  */
 
 import { BrowserWindow, app } from 'electron';
+import { resolve } from 'path';
 import listen from './ipc';
-import { startServer } from './server';
-
-// Start local webserver to host app content
-startServer();
 
 // Start the IPC listeners
 listen();
@@ -22,7 +19,6 @@ const config = {
   scrollBounce: true,
   titleBarStyle: 'hiddenInset',
   vibrancy: 'sidebar',
-  visualEffectStates: 'followWindow',
   webPreferences: {
     nodeIntegration: true,
   },
@@ -46,7 +42,7 @@ app.on('ready', () => {
 
   window = new BrowserWindow(config)
   devTools = new BrowserWindow();
-  window.loadURL('http://127.0.0.1:18451/');
+  window.loadFile(resolve(__dirname, '../../build/index.html'));
   window.webContents.setDevToolsWebContents(devTools.webContents);
   window.webContents.openDevTools();
 

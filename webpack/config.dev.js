@@ -1,5 +1,5 @@
 // Import Webpack plugins
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 // Import additional configurations
 const base = require('./config.base.js');
@@ -23,4 +23,4 @@ const app = merge(common, base, {
 // Electron configuration
 const client = merge(common, clean, electron);
 
-module.exports = [client, app];
+module.exports = [ client, app ];

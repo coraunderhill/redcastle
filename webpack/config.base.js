@@ -20,22 +20,21 @@ module.exports = {
     rules: [
       core.module.rules.js,
       { // Fonts
-        test: /\.(eot|svg|ttf|woff|woff2)/,
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
         },
       },
       { // Sass and CSS
-        test: /\.(c|sc)ss/,
-        loader: [
-          MiniCssExtract.loader,
+        test: /\.(c|sc)ss$/,
+        use: [
+          { loader: MiniCssExtract.loader,
+            options: { publicPath: '' },
+          },
           'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
+          { loader: 'sass-loader',
+            options: { sourceMap: true, },
           },
         ],
       },

@@ -1,0 +1,9 @@
+@use '../core/variables' as *;
+
+.frosted {
+  backdrop-filter: $frost-blur;
+  background-color: $frost-bgcolor;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}

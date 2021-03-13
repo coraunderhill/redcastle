@@ -12,12 +12,14 @@ nav#main > ul {
   }
 
   & li {
-    cursor: pointer;
     display: inline-block;
     list-style-type: none;
+    margin: $nav-item-spacing;
   }
 
   & i[class^=ri-] {
+    cursor: pointer;
+    -webkit-app-region: no-drag;
     display: block;
     font-size: $toolbar-icon-size;
     line-height: $toolbar-icon-size;

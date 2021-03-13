@@ -1,0 +1,43 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+.grid-item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  box-shadow: $drop-shadow;
+  height: $grid-item-h;
+  margin: $grid-item-margin;
+  transition: $transition-smooth;
+  width: $grid-item-w;
+
+  &:hover {
+    box-shadow: $drop-shadow-hov;
+  }
+}
+
+.grid-item-header {
+  position: relative;
+  width: 100%;
+}
+
+.grid-item-info {
+  color: #000;
+  font-size: $grid-item-info;
+  font-style: italic;
+  font-weight: $subheader-weight;
+  padding: 0.5em;
+  position: relative;
+}
+
+.grid-item-title {
+  display: block;
+  font-size: $grid-item-title;
+  font-style: normal;
+  font-weight: $header-weight;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

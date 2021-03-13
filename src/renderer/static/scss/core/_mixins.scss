@@ -26,18 +26,12 @@
 
 /// Adds rules for maintaining the requested aspect ratio
 /// @access public
-/// @param {Number} $width
-/// @param {Number} $height
+/// @param {Number} $width Aspect width (e.g.: 16)
+/// @param {Number} $height Aspect height (e.g.: 9)
+/// @param {Boolean} $override Adds !important
 /// @return {String} Aspect rules
-@mixin aspect-ratio($width, $height) {
-  position: relative;
+@mixin aspect-ratio($width, $height, $override: false) {
 
-  &::before {
-    content: '';
-    display: block;
-    padding-top: ($height / $width) * 100%;
-    width: 100%;
-  }
 }
 
 /// Adds rules for dark mode support

@@ -1,12 +1,12 @@
 import React from 'react';
-import { parseDate, parseTime } from '@common/helpers';
+import { isRecent, parseDate, parseTime } from '@common/helpers';
 import goTo from '@common/navigate';
 
 /**
  * Video Grid component
  * @param {Object} props Component properties
  * @param {Array} props.data API response data
- * @returns {JSX.Element|boolean} React component or false on error
+ * @returns {JSX.Element} React component
  */
 const Grid = props => {
 
@@ -23,6 +23,12 @@ const Grid = props => {
 
 }
 
+/**
+ * Video Grid Item component
+ * @param {Object} props Component properties
+ * @param {Array} props.data API response data
+ * @returns {JSX.Element} React component
+ */
 const GridItem = props => {
 
   const { id } = props.data;
@@ -36,24 +42,28 @@ const GridItem = props => {
   // Convert timestamps
   const date = parseDate(publishedAt);
   const time = parseTime(publishedAt);
-  const timestamp = `${time} on ${date}`;
+  let timestamp = '';
+
+  // Assemble our timestamp
+  const flag = isRecent(date);
+  if (flag === 1) timestamp += `Today@${time}`
+  else if (flag === 0) timestamp += `Yesterday@${time}`
+  else timestamp += `${date}@${time}`
+  const info = `${timestamp} by ${channelTitle}`;
+  const styles = {
+    backgroundImage: `url(${thumbnails.high.url.toString()})`
+  };
 
   return (
     <div className="grid-item"
-      // key={id}
       onClick={() => goTo(`/watch?v=${id}`)}
-    >
-      <div className="grid-item-thumb" style={{
-        backgroundImage: `url(${thumbnails.high.url.toString()})`,
-      }} />
-      <div className="grid-item-content">
-        <span className="grid-item-title"
-          children={title}
-          title={title}
-        />
-        <span className="grid-item-info">
-          {channelTitle} – {timestamp}
-        </span>
+      style={styles} >
+      <div className="grid-item-header">
+        <div className="frosted" />
+        <div className="grid-item-info">
+          <span className="grid-item-title">{title}</span>
+          {info}
+        </div>
       </div>
     </div>
   );

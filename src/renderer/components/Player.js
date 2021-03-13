@@ -18,12 +18,18 @@ const Player = props => {
   const params = {
     playerVars: {
       autoplay: true,
+      containerClassName: 'aspect-container',
       enablejsapi: 1,
       modestbranding: 1,
     },
   };
 
-  return <YouTube opts={params} videoId={videoID} />;
+  return (
+      <YouTube containerClassName='aspect-container'
+        opts={params}
+        videoId={videoID}
+      />
+  );
 
 }
 

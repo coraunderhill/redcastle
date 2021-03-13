@@ -1,8 +1,8 @@
 /**
  * Colors
  */
-$grey-dark: hsl(0, 0, 20);
-$grey-ultralight: hsl(0, 0, 85);
+$grey-dark: hsl(0, 0%, 20%);
+$grey-ultralight: hsl(0, 0%, 85%);
 
 /**
  * Body components
@@ -14,12 +14,19 @@ $body-font-size: 14px;
 $dark-body-color: $grey-ultralight;
 
 /**
+ * Frost components
+ */
+$frost-bgcolor: hsla(0, 100%, 100%, 0.15);
+$frost-blur: blur(0.5em);
+
+/**
  * Grid components
  */
+$grid-item-h: 140px;
 $grid-item-info: 0.85em;
-$grid-item-margin:0.5em;
-$grid-item-title: 1em;
-$grid-item-w: 240px;
+$grid-item-margin: 5px;
+$grid-item-title: 1.25em;
+$grid-item-w: 250px;
 
 /**
  * Header components
@@ -36,6 +43,11 @@ $media-queries: (
 );
 
 /**
+ * Nav bar
+ */
+$nav-item-spacing: 0 0.5em;
+
+/**
  * Remixicon
  */
 $toolbar-icon-size: 2em;
@@ -43,16 +55,15 @@ $toolbar-icon-size: 2em;
 /**
  * Shadows and lighting
  */
-$drop-shadow: 0 1px 3px hsla(0,0,0,0.12), 0 1px 2px hsla(0,0,0,0.24);;
-$drop-shadow-hov: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$drop-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24);
+$drop-shadow-hov: 0 14px 28px hsla(0, 0%, 0%, 0.25), 0 10px 10px hsla(0, 0%, 0%, 0.22);
 
 /**
  * Transitions
  */
-$transition-smooth: all 0.3s cubic-bezier(.25,.8,.25,1);
+$transition-smooth: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
 /**
  * Toolbar components
  */
-$toolbar-bgcolor: hsla(0, 0, 0, 0.65);
-$toolbar-h: 4em;
+$toolbar-h: 2.75em;

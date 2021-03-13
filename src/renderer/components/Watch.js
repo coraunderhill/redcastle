@@ -26,7 +26,7 @@ const Watch = props => {
   return (
     <div className="watch-container">
       <Player videoID={id} />
-      <WatchDetails details={snippet} />
+      <WatchDetails snippet={snippet} />
     </div>
   );
 
@@ -35,7 +35,7 @@ const Watch = props => {
 /**
  * Video page details component
  * @param {Object} props Component properties
- * @param {Object} props.details API `snippet` response
+ * @param {Object} props.snippet API `snippet` response
  * @returns {JSX.Element} React component
  */
 export const WatchDetails = props => {
@@ -45,7 +45,7 @@ export const WatchDetails = props => {
       description,
       publishedAt,
       title,
-    } = props.details;
+    } = props.snippet;
 
     /**
      * @type {string}

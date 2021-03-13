@@ -1,12 +1,8 @@
-iframe[title^="YouTube"]::before {
-  content: '';
-  float: left;
-  height: 50vh;
-  padding-bottom: 25%;
-}
+@use '../core/mixins' as *;
 
-iframe[title^="YouTube"]::after {
-  clear: left;
-  content: ' ';
-  display: table;
+iframe[title^="YouTube"] {
+  height: 100% !important;
+  width: 100% !important;
+
+  @include aspect-ratio(16, 9, true);
 }

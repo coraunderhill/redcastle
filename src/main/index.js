@@ -4,18 +4,16 @@
 
 import { BrowserWindow, app } from 'electron';
 import { resolve } from 'path';
-import listen from './ipc';
-
-// Start the IPC listeners
-listen();
+import init from './init';
+import './ipc';
 
 /**
  * @type {Electron.BrowserWindowConstructorOptions}
  */
 const config = {
   height: 600,
-  minHeight: 480,
-  minWidth: 480,
+  minHeight: 304,
+  minWidth: 540,
   scrollBounce: true,
   titleBarStyle: 'hiddenInset',
   vibrancy: 'sidebar',
@@ -40,11 +38,12 @@ let devTools = null;
 // Run when Electron preload has finished
 app.on('ready', () => {
 
-  window = new BrowserWindow(config)
-  devTools = new BrowserWindow();
+  window = new BrowserWindow(config);
   window.loadFile(resolve(__dirname, '../../build/index.html'));
+  devTools = new BrowserWindow();
   window.webContents.setDevToolsWebContents(devTools.webContents);
   window.webContents.openDevTools();
+  init();
 
 });
 

@@ -1,0 +1,25 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+#toolbar {
+  backdrop-filter: blur(0.5em);
+  background-color: $frost-bgcolor;
+  height: $toolbar-h;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: $transition-smooth;
+  width: 100%;
+  z-index: 10;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#windowControls {
+  height: 100%;
+  width: 75px;
+}

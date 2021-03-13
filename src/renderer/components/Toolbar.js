@@ -1,8 +1,6 @@
 import React from 'react';
 import { ipcRenderer } from 'electron';
 
-import Nav from './Nav';
-
 /**
  * Toolbar component
  * @returns {JSX.Element} React component
@@ -10,14 +8,22 @@ import Nav from './Nav';
 const Toolbar = () => {
 
   /**
+   * Controls when to display the traffic light controls
+   * @param {boolean} b Boolean flag
+   */
+  const _showControls = b => ipcRenderer.send('windowControls', b);
+
+  /**
    * Transforms the BrowserWindow
    * @param {string} arg `max`, `min`, or `res`
    */
-  const _transform = arg => ipcRenderer.send('transform', arg);
+  const _transform = s => ipcRenderer.send('transform', s);
 
   return (
     <div id="toolbar" onDoubleClick={() => _transform('max')}>
-      <Nav />
+      <div id="windowControls"
+        onMouseOut={() => _showControls(false)}
+        onMouseOver={() => _showControls(true)} />
     </div>
   );
 }
